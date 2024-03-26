@@ -1,0 +1,38 @@
+export const arraytest = [
+  {
+    id: 1,
+    no: "Success",
+    time: "12m ago",
+    amount: "5 SHIDO",
+    text: "x65c1b...c00c9c6",
+    textBig: "0x65c1b...c00c9c6",
+    diffData: "0x51a8F...CA09D78",
+  },
+  {
+    id: 2,
+    no: "Success",
+    time: "13m ago",
+    amount: "5 SHIDO",
+    text: "0x65c1b...c00c9c",
+    textBig: "0x65c1b...c00c9c6",
+    diffData: "0x51a8F...CA09D78",
+  },
+  {
+    id: 3,
+    no: "Success",
+    time: "14m ago",
+    amount: "5 SHIDO",
+    text: "x65c1b...c00c9c6",
+    textBig: "0x65c1b...c00c9c6",
+    diffData: "0x51a8F...CA09D78",
+  },
+  {
+    id: 4,
+    no: "Success",
+    time: "15m ago",
+    amount: "5 SHIDO",
+    text: "x65c1b...c00c9c6",
+    textBig: "0x65c1b...c00c9c6",
+    diffData: "0x51a8F...CA09D78",
+  },
+];
