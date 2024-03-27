@@ -3,6 +3,8 @@ import { arraytest } from "../utils/Blockarray";
 import block from "../assests/pngs/block.png";
 import { arraytest1 } from "../utils/Blockarray1";
 import square from "../assests/pngs/square.png";
+import SearchBar from '../components/SearchBar.jsx';
+
 
 const Blocks = () => {
   const [currentpage, setCurrentpage] = useState(1);
@@ -58,6 +60,7 @@ const Blocks = () => {
 
   return (
     <div>
+      <SearchBar />
       <div className="mt-3">
         <h1 className="flex ml-9">
           <img src={block} className="w-7" alt="" />
@@ -81,7 +84,7 @@ const Blocks = () => {
         ))}
       </div>
       <div className="rounded-lg overflow-x-auto">
-        <table className="items-center mt-9 mx-auto md:w-[80rem] rounded-lg text-left sm:w-[50rem] ">
+        <table className="items-center mt-9 mx-auto lg:w-[62.5rem] xl:w-[80rem] rounded-lg text-left sm:w-[50rem] ">
           <thead className="bg-[#0F2434] rounded-lg text-white text-lg ">
             <tr className="text-white rounded-xl">
               <th className="text-left pl-7 py-4 "> Block </th>
@@ -120,7 +123,7 @@ const Blocks = () => {
         </table>
         <div>
           <nav>
-            <ul className="text-white items-center mx-auto md:w-[80rem] w-[43rem] sm:w-full flex flex-row h-7 py-7 mb-12 justify-center bg-[#071120] ">
+            <ul className="text-white items-center mx-auto w-[43rem] lg:w-[62.5rem] xl:w-[80rem] sm:w-[50rem] flex flex-row h-7 py-7 mb-12 justify-center bg-[#071120] ">
               <li className="mr-3">
                 <a
                   href="#"

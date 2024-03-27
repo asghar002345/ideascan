@@ -3,6 +3,7 @@ import { arraytest1,arraytest2 } from '../utils/Blockarray1'
 import DynamicChart from '../components/DynamicChart'
 import { UserData } from '../components/Data'
 import square from '../assests/pngs/square.png'
+import SearchBar from '../components/SearchBar.jsx';
 
 
 const Transactions = () => {
@@ -45,6 +46,7 @@ const Transactions = () => {
 
   return (
     <div >
+      <SearchBar />
       <h1 className='font-bold font-poppins text-2xl mt-3 ml-12 text-white'>Transactions</h1>
       <div className='bg-[#252527] flex flex-col lg:flex-row xl:flex-row rounded-xl shadow-lg w-full md:w-[40rem] lg:w-[60rem] xl:w-[80rem] h-[28rem] items-center mx-auto  my-5'>
         <div className='justify-center ml-12 text-white flex lg:flex-col mx-3'>

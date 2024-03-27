@@ -9,9 +9,10 @@ import Contracts from './pages/Contracts.jsx'
 import Nodes from './pages/Nodes.jsx'
 import Stats_Graphs from './pages/Stats & Graphs.jsx'
 import Validators from './pages/Validators.jsx'
-import Tokens from './pages/Tokens.jsx'
+// import Tokens from './pages/Tokens.jsx'
 import Transactions from './pages/Transactions.jsx'
 import Faucet from './pages/Faucet.jsx';
+import Assests from './pages/Assests.jsx';
 
 
 function App() {
@@ -32,8 +33,8 @@ function App() {
         <Route  path='/nodes' 
         element = {< Nodes />}
         />
-        <Route  path='/tokens' 
-        element = {< Tokens />}
+        <Route  path='/assests' 
+        element = {< Assests />}
         />
         <Route  path='/transactions' 
         element = {< Transactions />}

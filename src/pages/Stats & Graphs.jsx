@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import StatChart from "../components/Statchart";
+import SearchBar from '../components/SearchBar.jsx';
+
 
 const Stats_Graphs = () => {
   const [statsData, setStatsData] = useState(null);
@@ -28,25 +30,7 @@ const Stats_Graphs = () => {
   };
   return (
     <div>
-      {/* <div className="flex flex-wrap justify-center">
-        <StatCard
-          title="Average Block Time"
-          value={`${statsData?.average_block_time} ms`}
-        />
-        <StatCard title="Coin Price" value={`$${statsData?.coin_price}`} />
-        <StatCard
-          title="Coin Price Change Percentage"
-          value={`${statsData?.coin_price_change_percentage}%`}
-        />
-        <StatCard
-          title="Average Gas Price"
-          value={`${statsData?.gas_prices.average} gwei`}
-        />
-        <StatCard
-          title="Total Transactions"
-          value={statsData?.total_transactions}
-        />
-      </div> */}
+      <SearchBar />
       <StatChart />
     </div>
   );

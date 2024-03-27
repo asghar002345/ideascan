@@ -2,6 +2,8 @@ import React from "react";
 import { arraytest3 } from "../utils/Blockarray1";
 import { useState } from "react";
 import square from "../assests/pngs/square.png";
+import SearchBar from '../components/SearchBar.jsx';
+import SideBar from "../components/SideBar.jsx";
 
 const Contracts = () => {
   const [currentpage, setCurrentpage] = useState(1);
@@ -32,6 +34,7 @@ const Contracts = () => {
 
   return (
     <div>
+      <SearchBar />
       <h1 className="font-bold font-poppins text-[32px] mt-3 ml-10 text-white">
         Contracts
       </h1>

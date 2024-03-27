@@ -35,8 +35,8 @@ export const menuItem = [
   },
   {
     id: "6",
-    path: "/tokens",
-    name: "Tokens",
+    path: "/assests",
+    name: "Assests",
   },
   {
     id: "7",
@@ -82,7 +82,8 @@ const SideBar = () => {
               <Link
                 to={item.path}
                 className="my-4 cursor-pointer ml-7"
-                onClick={() => menuCollapse}
+                // check this
+                onClick={() => menuIconClick()}
               >
                 {item.name}
               </Link>
