@@ -46,21 +46,27 @@ const Transactions = () => {
   return (
     <div >
       <h1 className='font-bold font-poppins text-2xl mt-3 ml-12 text-white'>Transactions</h1>
-      <div className='bg-[#252527] flex flex-col lg:flex-row xl:flex-row rounded-xl shadow-lg lg:w-[70rem] xl:w-[80rem] h-[28rem] items-center mx-auto  my-5'>
-        <div className='justify-center ml-8 text-white'>
+      <div className='bg-[#252527] flex flex-col lg:flex-row xl:flex-row rounded-xl shadow-lg w-full md:w-[40rem] lg:w-[60rem] xl:w-[80rem] h-[28rem] items-center mx-auto  my-5'>
+        <div className='justify-center ml-12 text-white flex lg:flex-col mx-3'>
+          <div className='px-1 text-center lg:text-left'>
           <h1 className='my-3'>Total Transactions</h1>
           <p className='text-2xl mb-2'>199.5 K</p>
+          </div>
+          <div className='px-1 text-center lg:text-left'>
           <h1 className='my-3'>Contract Transaction</h1>
           <p className='text-2xl mb-2'>68</p>
+          </div>
+          <div className='px-1 text-center lg:text-left'>
           <h1 className='my-3'>Gas Fee Paid</h1>
           <p className='text-2xl mb-2'>0.2597</p>
+          </div>
         </div>
         <div>
           <DynamicChart chartData={userData} className="" />
         </div>
       </div>
       <div>
-      <div className='rounded-lg'>
+      <div className='rounded-lg overflow-x-auto'>
         <table className='items-center mx-auto mt-9 w-[80rem] rounded-lg text-left'>
           <thead className='bg-[#0F2434] rounded-lg text-white font-bold font-poppins '>
             <tr className='text-white rounded-xl'>

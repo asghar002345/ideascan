@@ -82,7 +82,7 @@ const SideBar = () => {
               <Link
                 to={item.path}
                 className="my-4 cursor-pointer ml-7"
-                onClick={menuCollapse}
+                onClick={() => menuCollapse}
               >
                 {item.name}
               </Link>

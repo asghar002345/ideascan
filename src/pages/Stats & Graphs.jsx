@@ -28,7 +28,7 @@ const Stats_Graphs = () => {
   };
   return (
     <div>
-      <div className="flex flex-wrap justify-center">
+      {/* <div className="flex flex-wrap justify-center">
         <StatCard
           title="Average Block Time"
           value={`${statsData?.average_block_time} ms`}
@@ -46,7 +46,7 @@ const Stats_Graphs = () => {
           title="Total Transactions"
           value={statsData?.total_transactions}
         />
-      </div>
+      </div> */}
       <StatChart />
     </div>
   );

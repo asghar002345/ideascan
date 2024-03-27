@@ -10,17 +10,11 @@ import { useState } from "react";
 const Navbar = () => {
   return (
     <div className="flex justify-between bg-[#181919] w-full text-white items-center h-[80px] font-poppins">
-      <div className="flex ml-8 items-center">
-        <img src={logo} alt="logo" />
-        <img src={logo1} alt="logo1" className="pl-3" />
+      <div className="ml-2 md:ml-12">
+        <img src={logo} alt="logo" className="w-52" />
+        {/* <img src={logo1} alt="logo1" className="pl-3" /> */}
       </div>
-      <div>
-        <h1 className="font-semibold text-2xl  hidden md:block lg:block">
-          {" "}
-          IDEASCAN - TESTNET EXPLORER
-        </h1>
-      </div>
-      <div className="mr-8"> {<SideBar />}</div>
+      <div  className='mr-3 md:mr-16'> {<SideBar />}</div>
     </div>
   );
 };
