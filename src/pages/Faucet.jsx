@@ -5,7 +5,7 @@ import meta from '../assests/svgs/metamask-icon.svg';
 const Faucet = () => {
   return (
     <div className='flex flex-col lg:flex-row lg:justify-between w-[20rem] h-[35rem] md:w-[40rem] md:h-[35rem] lg:w-[60rem] xl:w-[75rem] lg:h-[22rem] bg-[#252527] my-12 lg:mt-20 mx-auto rounded-lg items-center justify-center'>
-      <div className='flex flex-col w-[20rem] text-white justify-center lg:mx-20 xl:mx-24 items-center md:items-start'>
+      <div className='flex flex-col w-[20rem] text-white justify-center lg:mx-24 xl:mx-24 items-center md:items-start'>
         <label htmlFor="#" className='my-2'>Enter Adress</label>
         <input type="text" placeholder='Enter your wallet adress' className='bg-[#3B3B3D] py-2 rounded-lg px-3 w-[18rem] md:w-[25rem] my-2' />
         <label htmlFor="#" className='py-2'>Enter Adress</label>
