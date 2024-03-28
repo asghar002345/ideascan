@@ -2,7 +2,8 @@ import React from 'react'
 import { useState } from 'react';
 import { arraytest4 } from '../utils/Blockarray1';
 import { UserData } from '../components/Data';
-import { arraytest } from '../utils/arraytest'
+import { arraytest } from '../utils/arraytest';
+import SearchBar from '../components/SearchBar.jsx';
 
 const Validators = () => {
 
@@ -34,14 +35,15 @@ const Validators = () => {
 
   return (
     <div className='font-poppins'>
+      <SearchBar />
       <div>
       <div className='mt-3'>
         <h1 className='flex ml-9  text-white text-2xl font-bold'>Blocks</h1>
       </div>
-      <div className='flex justify-between items-center text-white mx-8 my-4 max-w-auto bg-[#0F2434] rounded-xl'>
+      <div className='grid w-[18rem] md:grid-cols-2 md:w-[45rem] lg:grid-cols-3 lg:w-[60rem] items-center text-white my-4 mx-auto bg-[#0F2434] xl:grid-cols-4 xl:w-[80rem] rounded-xl'>
             {
                 arraytest.map((arr)=>(
-                    <div key={arr.id} className='flex flex-col justify-center items-center w-64 border border-[#1E2739] m-3 rounded-lg h-36 bg-[#040F1C]'>
+                    <div key={arr.id} className='flex flex-col justify-center items-center w-64 border border-[#1E2739] my-3 mx-auto rounded-lg h-36 bg-[#040F1C]'>
                       <div className='flex justify-center border border-[#40576A] rounded-lg bg-[#354D61] w-10 h-10 mb-3'>
                       <img src={arr.logo} alt="" className='' />
                       </div>
@@ -54,8 +56,8 @@ const Validators = () => {
             }
         </div>
       </div>
-        <div className='rounded-lg'>
-          <table className='items-center mx-9 mt-9 w-[80rem] rounded-lg text-left font-poppins '>
+        <div className='rounded-lg overflow-x-auto'>
+          <table className='items-center mx-auto mt-9 w-[70rem] lg:w-[60rem]  xl:w-[80rem] rounded-lg text-left font-poppins '>
             <thead className='bg-[#0F2434] rounded-lg text-white text-lg '>
               <tr className='text-white rounded-xl'>
                 <th className='text-left pl-7 py-4 '> Validator Name </th>
@@ -83,7 +85,7 @@ const Validators = () => {
           </table>
           <div>
             <nav>
-              <ul className='text-white items-center mx-auto w-[80rem] flex flex-row  justify-center h-7 py-7 mb-12  bg-[#071120]'>
+              <ul className='text-white items-center mx-auto w-[70rem] lg:w-[60rem] xl:w-[80rem] flex flex-row  justify-center h-7 py-7 mb-12  bg-[#071120]'>
                 <li className='mr-3'>
                   <a href="#" onClick={prePage} className='bg-[#0C71BC] rounded-full py-2 px-3'>Prev </a>
                 </li>
