@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import { FaXmark } from "react-icons/fa6";
+
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [menuopen ,setMenuopen] = useState(false);
 
   const apiUrl = "https://gnosis.blockscout.com/api/v2/search";
 
@@ -28,6 +31,10 @@ const SearchBar = () => {
     const text = "Search for an address, block, transaction/block hash"
     const result = text.slice(9)
   }
+
+  const closemenu = () => {
+    setMenuopen(!menuopen)
+  }
   return (
     <div>
       <div className="flex items-center h-[100px] justify-center">
@@ -51,7 +58,10 @@ const SearchBar = () => {
       {/* Display search results */}
       {searchResults.length > 0 && (
         <div className="mt-4 px-4">
+          <div>
           <h2 className="text-lg font-semibold mb-2">Search Results:</h2>
+            <button onClick={closemenu}>{<FaXmark className="w-6 h-6 text-white"  />}</button>
+          </div>
           <ul className="bg-white shadow-md rounded-lg p-4">
             {searchResults.slice(0, 5).map((result, index) => (
               <li
