@@ -26,7 +26,7 @@ const Carddetails = () => {
 
   return (
     <div className="mx-4 font-poppins">
-      <div className="flex justify-between px-1 md:mx-[3rem] lg:mx-[2rem] xl:mx-[2.4rem] my-6">
+      <div className="flex justify-between px-1 md:mx-[3rem] lg:mx-[2rem] xl:mx-[7rem] my-6">
         <h1 className="font-semibold text-xl text-white">Recent Blocks</h1>
         <button
           onClick={toggleModal}

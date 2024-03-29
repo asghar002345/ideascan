@@ -6,7 +6,7 @@ import { arraytest } from '../utils/arrary2'
 
 const Charts = ({ chartData, options }) => {
     return (
-        <div className='flex flex-col md:flex-col items-center md:items-center lg:flex-row mt-9 justify-center'>
+        <div className='flex flex-col md:flex-col items-center md:items-center lg:flex-row mt-9 justify-center w-[80rem] mx-auto'>
             <div className=' border rounded-lg border-[#212327] w-[18rem] h-[23rem] sm:w-[40rem] md:w-[35rem] lg:w-[34rem] xl:w-full md:mx-12 mb-3 md:h-[34rem]'>
                 <Line data={chartData} options={{ maintainAspectRatio: false }} className='bg-[#252527]' />
             </div>

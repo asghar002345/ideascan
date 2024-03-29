@@ -59,19 +59,18 @@ const SearchBar = () => {
       {searchResults.length > 0 && (
         <div className="mt-4 px-4">
           <div>
-          <h2 className="text-lg font-semibold mb-2">Search Results:</h2>
-            <button onClick={closemenu}>{<FaXmark className="w-6 h-6 text-white"  />}</button>
-          </div>
-          <ul className="bg-white shadow-md rounded-lg p-4">
+          <h2 className="text-lg font-semibold mb-2 text-white">Search Results:</h2>
+          <ul className={`bg-[#0F2434] shadow-md rounded-lg p-4`}>
             {searchResults.slice(0, 5).map((result, index) => (
               <li
-                key={index}
-                className="border-b border-gray-200 py-2 flex justify-between items-center"
+              key={index}
+              className="border-b border-gray-200 py-2 flex justify-between items-center"
               >
-                <span>{result.address}</span>
+                <span className="text-white">{result.address}</span>
               </li>
             ))}
           </ul>
+          </div>
         </div>
       )}
     </div>

@@ -61,8 +61,8 @@ const Blocks = () => {
   return (
     <div>
       <SearchBar />
-      <div className="mt-3">
-        <h1 className="flex ml-9">
+      <div className="mt-3 w-[19rem] lg:w-[63rem] xl:w-[80rem] mx-auto">
+        <h1 className="flex">
           <img src={block} className="w-7" alt="" />
           <span className="ml-3 text-white text-2xl font-bold">Blocks</span>
         </h1>

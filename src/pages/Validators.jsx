@@ -37,8 +37,8 @@ const Validators = () => {
     <div className='font-poppins'>
       <SearchBar />
       <div>
-      <div className='mt-3'>
-        <h1 className='flex ml-9  text-white text-2xl font-bold'>Blocks</h1>
+      <div className='mt-3 w-[18rem] md:w-[45rem] lg:w-[60rem] xl:w-[80rem] mx-auto'>
+        <h1 className='flex text-white text-2xl font-bold'>Blocks</h1>
       </div>
       <div className='grid w-[18rem] md:grid-cols-2 md:w-[45rem] lg:grid-cols-3 lg:w-[60rem] items-center text-white my-4 mx-auto bg-[#0F2434] xl:grid-cols-4 xl:w-[80rem] rounded-xl'>
             {

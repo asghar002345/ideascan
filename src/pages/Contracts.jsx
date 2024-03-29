@@ -35,9 +35,11 @@ const Contracts = () => {
   return (
     <div>
       <SearchBar />
-      <h1 className="font-bold font-poppins text-[32px] mt-3 ml-10 text-white">
+      <div className="lg:w-[60rem] xl:w-[80rem] mx-auto">
+      <h1 className="font-bold font-poppins text-[32px] mt-3 text-white text-left">
         Contracts
       </h1>
+      </div>
       <div className="rounded-lg overflow-x-auto">
         <table className="items-center lg:mx-auto mt-7 w-[50rem] lg:w-[60rem] xl:w-[80rem] rounded-lg text-left">
           <thead className="bg-[#0F2434] rounded-lg text-white text-lg ">

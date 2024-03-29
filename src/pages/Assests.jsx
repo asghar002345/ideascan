@@ -32,9 +32,9 @@ const Assests = () => {
   return (
     <div className='  '>
       <SearchBar />
-      <div className='flex flex-col'>  
-      <div>
-        <h1 className='text-white font-bold text-2xl mt-6 w-12 mx-auto'>Assests</h1>
+      <div className='flex flex-col pb-20'>  
+      <div className='w-[60rem] mx-auto '>
+        <h1 className='text-white font-bold text-2xl mt-6 text-left'>Assests</h1>
       </div>
       <div className='rounded-lg overflow-x-auto'>
         <table className='items-center mt-9 w-[60rem] justify-center rounded-lg text-left mx-auto'>
@@ -59,7 +59,7 @@ const Assests = () => {
         </table>
         <div className=''>
           <nav>
-            <ul className="text-white w-[60rem] flex flex-row justify-center py-3 bg-[#071120] ">
+            <ul className="text-white mx-auto  w-[60rem] flex flex-row justify-center py-3 bg-[#071120] ">
               <li className="mr-3">
                 <a
                   href="#"

@@ -20,7 +20,7 @@ const Cardresult = () => {
 
   return (
     <div className="mb-28 mx-4">
-      <div className="flex justify-between items-center  md:mx-[3rem] lg:mx-[3rem] xl:mx-[2rem] my-6">
+      <div className="flex justify-between items-center  md:mx-[3rem] lg:mx-[3rem] xl:mx-[7rem] my-6">
         <h1 className="font-semibold text-xl text-white">
           Recent Transactions
         </h1>
