@@ -7,25 +7,25 @@ export const arraytest = [
   {
     id: 1,
     logo: img1,
-    textBig: "total_blocks",
-    diffData: "508700",
+    textBig: "Avg. Block Time",
+    diffData: "1.50 Sec",
   },
   {
     id: 2,
     logo: img2,
-    textBig: "total_addresses",
-    diffData: "982340",
+    textBig: "Market Cap",
+    diffData: "61.44 M",
   },
   {
     id: 3,
     logo: img3,
-    textBig: "total_transactions",
-    diffData: "1699427",
+    textBig: "Avg. Apr ⓘ",
+    diffData: "59.7 %",
   },
   {
     id: 4,
     logo: img4,
-    textBig: "transactions_today",
-    diffData: "622",
+    textBig: "Circulation Supply ⓘ",
+    diffData: "8.22 B",
   },
 ];

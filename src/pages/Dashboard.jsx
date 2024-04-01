@@ -7,6 +7,7 @@ import Cardresult from '../components/Cardresult.jsx';
 import Footer from '../components/Footer.jsx';
 import SearchBar from '../components/SearchBar.jsx';
 import { useState } from 'react';
+import mainpage from '../assests/videos/mainpage.mp4'
 
 
 
@@ -15,10 +16,17 @@ const Home = () => {
   return (
     <div>
       
-      <div className='bg-center bg-cover' style={{backgroundImage: `url(${bg1})`
+      {/* <div className='bg-center bg-cover' style={{backgroundImage: `url(${bg1})`
       }}>
         <SearchBar />
         <Cards />
+      </div> */}
+      <div>
+        <video src={mainpage} autoPlay loop muted className='w-[100%] h-[100vh] object-cover'></video>
+        <div className='absolute top-20 sm:top-32 w-[100%] h-[100%]'>
+        <SearchBar />
+        <Cards />
+        </div>
       </div>
       <div>
       <Hero />

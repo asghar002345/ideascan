@@ -26,11 +26,11 @@ const Carddetails = () => {
 
   return (
     <div className="mx-4 font-poppins">
-      <div className="flex justify-between px-1 md:mx-[3rem] lg:mx-[2rem] xl:mx-[7rem] my-6">
-        <h1 className="font-semibold text-xl text-white">Recent Blocks</h1>
+      <div className="flex justify-between items-center px-1 md:w-[40rem] lg:w-[60rem] xl:w-[80rem] mx-auto my-3">
+        <h1 className="font-bold text-[24px] text-white uppercase">Recent Blocks</h1>
         <button
           onClick={toggleModal}
-          className=" rounded-xl px-5 py-2 text-white bg-blue-600"
+          className=" rounded-xl px-3 py-2 text-white bg-blue-600"
         >
           View all
         </button>
@@ -39,22 +39,22 @@ const Carddetails = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-7">
           {statsData?.map((item, index) => (
             <div key={index} className="mt-3">
-              <div className="border w-72 p-2 rounded-xl opacity-[100] bg-[#0F2434] text-white">
-                <div className="flex justify-between items-center mx-5">
-                  <p className="text-blue-400 font-medium text-[12px]">
+              <div className="w-[300px] h-[150px] p-2 rounded-xl opacity-[100] bg-[#0F2434] text-white">
+                <div className="flex justify-between items-center mx-4 py-2">
+                  <p className="text-blue-400 font-medium text-[16px]">
                     Number
                   </p>
-                  <p className="mr-3 text-blue-200 font-semibold">Time</p>
+                  <p className="mr-3 text-blue-200 font-semi-bold text-[16px]">Time</p>
                 </div>
-                <div className="font-semibold text-[16px]  leading-[30px] mx-5">
-                  <p className="text-[#737B82]">
-                    Tx Count :<span className="pl-3">{item.tx_count}</span>
+                <div className="font-semibold text-[16px] leading-[30px] mx-4">
+                  <p className="text-[#C6C8CC]">
+                    Tx Count<span className="pl-4 text-white">{item.tx_count}</span>
                   </p>
-                  <p className="text-[#737B82]">
-                    Hash:<span className="pl-11">{item.hash.slice(0,13)}...</span>{" "}
+                  <p className="text-[#C6C8CC]">
+                    Hash<span className="pl-11 text-white">{item.hash.slice(0,16)}...</span>{" "}
                   </p>
-                  <p className="text-[#737B82]">
-                    Validator: <span className="pl-1"> {item.validator} </span>{" "}
+                  <p className="text-[#C6C8CC]">
+                    Validator <span className="pl-3 text-white"> 012x125454545512... </span>{" "}
                   </p>
                 </div>
               </div>
