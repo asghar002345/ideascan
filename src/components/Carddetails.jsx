@@ -1,33 +1,61 @@
 import React, { useEffect, useState } from "react";
 import { arraytest } from "../utils/array3";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import ModalComponent from "./ModalComponent";
-const Carddetails = () => {
-  const [statsData, setStatsData] = useState(null);
-  const [error, setError] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+import Carddetailscarousel from "./Carddetailscarousel";
 
+const Carddetails = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [statsData, setStatsData] = useState([]);
   const test = async () => {
     const res = await fetch(
-      `https://gnosis.blockscout.com/api/v2/main-page/blocks`
+      `https://eth.blockscout.com/api/v2/blocks?type=block%20%7C%20uncle%20%7C%20reorg`
     );
     const response = await res.json();
-    setStatsData(response);
+    setStatsData(response.items);
     console.log("blocks");
-    console.log(response);
+    console.log('this is data', statsData);
   };
 
   useEffect(() => {
     test();
   }, []);
+
   // Function to toggle modal visibility
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
+  };
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    largedesktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+    },
+    desktop: {
+      breakpoint: { max: 1024, min: 900},
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 900, min: 464},
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
   };
 
   return (
     <div className="mx-4 font-poppins">
       <div className="flex justify-between items-center px-1 md:w-[40rem] lg:w-[60rem] xl:w-[80rem] mx-auto my-3">
-        <h1 className="font-bold text-[24px] text-white uppercase">Recent Blocks</h1>
+        <h1 className="font-bold text-[24px] text-white uppercase">
+          Recent Blocks
+        </h1>
         <button
           onClick={toggleModal}
           className=" rounded-xl px-3 py-2 text-white bg-blue-600"
@@ -35,37 +63,26 @@ const Carddetails = () => {
           View all
         </button>
       </div>
-      <div className="flex justify-center">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-7">
-          {statsData?.map((item, index) => (
-            <div key={index} className="mt-3">
-              <div className="w-[300px] h-[150px] p-2 rounded-xl opacity-[100] bg-[#0F2434] text-white">
-                <div className="flex justify-between items-center mx-4 py-2">
-                  <p className="text-blue-400 font-medium text-[16px]">
-                    Number
-                  </p>
-                  <p className="mr-3 text-blue-200 font-semi-bold text-[16px]">Time</p>
-                </div>
-                <div className="font-semibold text-[16px] leading-[30px] mx-4">
-                  <p className="text-[#C6C8CC]">
-                    Tx Count<span className="pl-4 text-white">{item.tx_count}</span>
-                  </p>
-                  <p className="text-[#C6C8CC]">
-                    Hash<span className="pl-11 text-white">{item.hash.slice(0,16)}...</span>{" "}
-                  </p>
-                  <p className="text-[#C6C8CC]">
-                    Validator <span className="pl-3 text-white"> 012x125454545512... </span>{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* <Carousel responsive={responsive}>
+          <Carddetailscarousel />
+          </Carousel> */}
+      <div className="w-[280px] mx-auto md:w-[700px] md:mx-6 lg:w-[970px] lg:mx-0 xl:w-[1280px] xl:mx-auto">
+      <Carousel
+        swipeable={true}
+        draggable={true}
+        showDots={false}
+        responsive={responsive}
 
+      >
+        {/* Map over your data and render multiple instances of Carddetailscarousel */}
+        {statsData.map((stats) => (
+          <Carddetailscarousel stats={stats} />
+        ))}
+      </Carousel>
+      </div>
       {/* Render the modal conditionally */}
       {isModalOpen && (
-        <ModalComponent onClose={toggleModal} /> // Pass onClose prop to handle modal close
+        <ModalComponent onClose={toggleModal} statsData={statsData} /> // Pass onClose prop to handle modal close
       )}
     </div>
   );

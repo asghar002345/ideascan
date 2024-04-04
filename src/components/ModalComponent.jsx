@@ -7,7 +7,7 @@ const ModalComponent = ({ onClose }) => {
   const test = async () => {
     try {
       const res = await fetch(
-        `https://gnosis.blockscout.com/api/v2/blocks?type=block%20%7C%20uncle%20%7C%20reorg`
+        `https://eth.blockscout.com/api/v2/blocks?type=block%20%7C%20uncle%20%7C%20reorg`
       );
       const response = await res.json();
       setStatsData(response.items);

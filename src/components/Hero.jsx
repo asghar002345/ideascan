@@ -7,9 +7,9 @@ const Hero = () => {
     labels: UserData.map((data) => data.year),
     datasets: [
       {
-        label: "Users Gained",
+        label: "Transaction History 148.6K",
         data: UserData.map((data) => data.userGain),
-        borderWidth: 2,
+        color:"white"
       },
     ],
   });
