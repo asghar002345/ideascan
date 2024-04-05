@@ -44,7 +44,7 @@ const Cards = () => {
             Market Cap
             </span>
             <span className="text-[18px] sm:text-[24px] font-poppins font-semibold">
-              ${statsData?.market_cap.slice(0,12)} M
+              ${statsData?.market_cap.slice(0,3)} M
             </span>
           </div>
         </div>
@@ -57,7 +57,7 @@ const Cards = () => {
             Avg. Apr ⓘ
             </span>
             <span className="text-[18px] sm:text-[24px] font-poppins font-semibold">
-              {statsData?.total_blocks} %
+              {statsData?.total_blocks.slice(0,3)} %
             </span>
           </div>
         </div>
@@ -70,7 +70,7 @@ const Cards = () => {
             Circulation Supply ⓘ
             </span>
             <span className="text-[18px] sm:text-[24px] font-poppins font-semibold">
-              {statsData?.transactions_today} B
+              {statsData?.transactions_today.slice(0,3)} B
             </span>
           </div>
         </div>

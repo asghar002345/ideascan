@@ -7,10 +7,10 @@ const ModalComponent = ({ onClose }) => {
   const test = async () => {
     try {
       const res = await fetch(
-        `https://eth.blockscout.com/api/v2/blocks?type=block%20%7C%20uncle%20%7C%20reorg`
+        `https://eth.blockscout.com/api/v2/main-page/transactions`
       );
       const response = await res.json();
-      setStatsData(response.items);
+      setStatsData(response);
     } catch (error) {
       setError(error);
     }
@@ -80,7 +80,7 @@ const ModalComponent = ({ onClose }) => {
                         Priority Fee
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
-                        Size
+                        Confirmations
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                         TX Count
@@ -112,16 +112,16 @@ const ModalComponent = ({ onClose }) => {
                           {item?.priority_fee}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                          {item?.size}
+                          {item?.confirmations}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                          {item?.tx_count}
+                          {item?.block}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                          {item?.tx_fees}
+                          {item?.fee?.value}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                          {item?.type}
+                          {item?.tx_types?.slice(0,13)}
                         </td>
                       </tr>
                     ))}

@@ -52,7 +52,7 @@ const Carddetails = () => {
 
   return (
     <div className="mx-4 font-poppins">
-      <div className="flex justify-between items-center px-1 md:w-[40rem] lg:w-[60rem] xl:w-[80rem] mx-auto my-3">
+      <div className="flex justify-between items-center px-3 sm:px-1 md:w-[40rem] lg:w-[60rem] xl:w-[80rem] mx-auto my-3">
         <h1 className="font-bold text-[24px] text-white uppercase">
           Recent Blocks
         </h1>
@@ -66,7 +66,7 @@ const Carddetails = () => {
       {/* <Carousel responsive={responsive}>
           <Carddetailscarousel />
           </Carousel> */}
-      <div className="w-[280px] mx-auto md:w-[700px] md:mx-6 lg:w-[970px] lg:mx-0 xl:w-[1280px] xl:mx-auto">
+      <div className="z-[2] w-[280px] mx-auto md:w-[700px] md:mx-6 lg:w-[970px] lg:mx-0 xl:w-[1280px] xl:mx-auto">
       <Carousel
         swipeable={true}
         draggable={true}

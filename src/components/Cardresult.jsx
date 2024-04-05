@@ -3,18 +3,20 @@ import { arraytest } from "../utils/array4";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Cardresultcarousel from "./Cardresultcarousel";
+import Cardresultcomponent from "./Cardresultcomponent";
 
 const Cardresult = () => {
 
   const [statsData, setStatsData] = useState([]);
   const [error, setError] = useState(null);
+  const [modelopen,setModelopen] = useState(false)
 
   const test = async () => {
     const res = await fetch(
-      `https://eth.blockscout.com/api/v2/blocks?type=block%20%7C%20uncle%20%7C%20reorg`
+      `https://eth.blockscout.com/api/v2/main-page/transactions`
     );
     const response = await res.json();
-    setStatsData(response.items);
+    setStatsData(response);
     console.log("recent transactions")
     console.log("This is Testing",statsData);
   };
@@ -22,6 +24,11 @@ const Cardresult = () => {
   useEffect(() => {
     test();
   }, []);
+
+  const toggleModal = () =>{
+    setModelopen(!modelopen)
+  }
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -51,7 +58,7 @@ const Cardresult = () => {
         <h1 className="font-bold text-[24px] text-white w-12 sm:w-[18rem]  uppercase">
           Recent Transactions
         </h1>
-        <button className="rounded-xl px-3 py-2 text-white bg-blue-600">
+        <button className="rounded-xl px-3 py-2 text-white bg-blue-600" onClick={toggleModal}>
           View All
         </button>
       </div>
@@ -69,6 +76,9 @@ const Cardresult = () => {
         ))}
       </Carousel>
       </div>
+      {modelopen && (
+        <Cardresultcomponent onClose={toggleModal} statsData={statsData} /> // Pass onClose prop to handle modal close
+      )}
     </div>
   );
 };

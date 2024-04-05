@@ -54,7 +54,7 @@ const SearchBar = () => {
       </div> 
       {/* Display search results */}
       {menuopen && ((searchResults.length > 0) && (
-          <div className="mt-4 px-4">
+          <div className="mt-4 px-4 absolute w-[94rem] mx-auto">
             <div className=" border-gray-200">
             <ul className={`bg-[#0F2434] shadow-md rounded-lg p-4 `}>
             <div className="flex justify-between">

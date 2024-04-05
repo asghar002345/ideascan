@@ -4,9 +4,11 @@ import DynamicChart from '../components/DynamicChart'
 import { UserData } from '../components/Data'
 import square from '../assests/pngs/square.png'
 import SearchBar from '../components/SearchBar.jsx';
+import { useEffect } from 'react'
 
 
 const Transactions = () => {
+  const [statsData, setStatsData] = useState([]);
   const [userData, setUserData] = useState(
     {
       labels: UserData.map((data) => data.year),
@@ -18,12 +20,26 @@ const Transactions = () => {
     }
   )
 
+  const test = async () => {
+    const res = await fetch(
+      `https://eth.blockscout.com/api/v2/main-page/transactions`
+    );
+    const response = await res.json();
+    setStatsData(response);
+    console.log("recent transactions")
+    console.log("This is Testing",statsData);
+  };
+
+  useEffect(() => {
+    test();
+  }, []);
+
   const [currentpage, setCurrentpage] = useState(1);
   const recordsperpage = 11;
   const indexoflastrecord = currentpage * recordsperpage;
   const indexoffirstrecord = indexoflastrecord - recordsperpage;
-  const records = arraytest2.slice(indexoffirstrecord, indexoflastrecord);
-  const nPages = Math.ceil(arraytest2.length / recordsperpage);
+  const records = statsData.slice(indexoffirstrecord, indexoflastrecord);
+  const nPages = Math.ceil(statsData.length / recordsperpage);
   const numbers = [...Array(nPages + 1).keys()].slice(1)
   console.log(records)
 
@@ -88,14 +104,14 @@ const Transactions = () => {
             {
               records.map(arr => (
                 <tr key={arr.id} className='text-white bg-[#040F1C] border-b-[1px] border-0 border-[#0F2434] font-poppins font-bold text-[14px] ' >
-                  <td className='pl-7 text-left py-3'>{arr.TxHash}</td>
-                  <td className='pl-7 text-left py-3 text-[#0E83DB]'>{arr.Block}</td>
-                  <td className='pl-7 text-left py-3'>{arr.Method}</td>
-                  <td className='pl-7 text-left py-3 flex items-center mt-2 text-[#0E83DB]'>{arr.From} <span><img src={square} alt="" className='pl-2'/></span> </td>
-                  <td className='pl-7 text-left py-3 text-[#0E83DB]'>{arr.To}<span className='inline-block pl-2 '><img src={square} alt="" className=''/></span> </td>
-                  <td className='pl-7 text-left py-3'>{arr.Timestamp}<span className='block font-semibold text-[11px] text-[#9CA0A7]'>{arr.date}</span></td>
-                  <td className='pl-7 text-left py-3'>{arr.Value}</td>
-                  <td className='pl-7 text-left py-3'><button className='text-green-500'>Success</button></td>
+                  <td className='pl-7 text-left py-3'>{arr.hash.slice(0,14)}...</td>
+                  <td className='pl-7 text-left py-3 text-[#0E83DB]'>{arr.block}</td>
+                  <td className='pl-7 text-left py-3'>{arr.method}</td>
+                  <td className='pl-7 text-left py-3 flex items-center mt-2 text-[#0E83DB]'>{arr.from.hash.slice(0,14)} <span><img src={square} alt="" className='pl-2 hover:cursor-pointer'/></span> </td>
+                  <td className='pl-7 text-left py-3 text-[#0E83DB]'>{arr.to.hash.slice(0,14)}<span className='inline-block pl-2 '><img src={square} alt="" className=''/></span> </td>
+                  <td className='pl-7 text-left py-3'>{arr.timestamp.slice(0,10)}<span className='block font-semibold text-[14px] text-[#9CA0A7]'>{arr.timestamp.slice(11,19)}</span></td>
+                  <td className='pl-7 text-left py-3'>{arr.value.slice(0,4)}</td>
+                  <td className='pl-7 text-left py-3'><button className='text-green-500'>{arr.result.slice(0,8)}</button></td>
                 </tr>
               ))
             }
