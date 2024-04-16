@@ -31,7 +31,7 @@ const Cards = () => {
               Avg. Block Time
             </span>
             <span className="text-[18px] sm:text-[24px] font-poppins font-semibold">
-              {statsData?.average_block_time} sec
+              {(statsData?.average_block_time/1000).toFixed(1)} sec
             </span>
           </div>
         </div>
@@ -44,7 +44,7 @@ const Cards = () => {
             Market Cap
             </span>
             <span className="text-[18px] sm:text-[24px] font-poppins font-semibold">
-              ${statsData?.market_cap.slice(0,3)} M
+              ${(statsData?.market_cap/1000000000).toFixed(2)} B
             </span>
           </div>
         </div>
@@ -57,7 +57,7 @@ const Cards = () => {
             Avg. Apr ⓘ
             </span>
             <span className="text-[18px] sm:text-[24px] font-poppins font-semibold">
-              {statsData?.total_blocks.slice(0,3)} %
+              {(statsData?.total_blocks/1000000).toFixed(1)} %
             </span>
           </div>
         </div>
@@ -70,7 +70,7 @@ const Cards = () => {
             Circulation Supply ⓘ
             </span>
             <span className="text-[18px] sm:text-[24px] font-poppins font-semibold">
-              {statsData?.transactions_today.slice(0,3)} B
+              {(statsData?.transactions_today/100000).toFixed(2)} B
             </span>
           </div>
         </div>

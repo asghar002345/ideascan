@@ -3,7 +3,7 @@ import { arraytest1 } from '../utils/Blockarray1'
 import SearchBar from '../components/SearchBar.jsx';
 
 const Assests = () => {
-
+  // https://eth.blockscout.com/api/v2/tokens?q=USDT&type=ERC-20%2CERC-721%2CERC-1155
   const [currentpage, setCurrentpage] = useState(1);
   const recordsperpage = 10;
   const indexoflastrecord = currentpage * recordsperpage;
@@ -40,7 +40,7 @@ const Assests = () => {
         <table className='items-center mt-9 w-[60rem] justify-center rounded-lg text-left mx-auto'>
           <thead className='bg-[#0F2434] rounded-lg text-white text-lg '>
             <tr className='text-white rounded-xl'>
-              <th className='text-left pl-7 py-4 '> Block </th>
+              <th className='text-left pl-7 py-4 '> Name </th>
               <th className='text-left pl-12 py-4'>Contact Adress</th>
               <th className='text-left pl-7 py-4'>Total Supply</th>
             </tr>

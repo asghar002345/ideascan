@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { slide as menu } from "react-burger-menu";
 import { Link, Route } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
@@ -6,6 +6,7 @@ import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import meta from "../assests/svgs/metamask-icon.svg";
+import { useRef } from "react";
 
 export const menuItem = [
   {
@@ -63,6 +64,26 @@ const SideBar = () => {
     setMenuCollapse(!menuCollapse);
     // menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
   };
+  // const onClickOutside = () => {
+  //   //condition checking to change state from true to false and vice versa
+  //   setMenuCollapse(!menuCollapse);
+  //   // menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
+  // };
+  
+  // const ref = useRef(null);
+  // // const { onClickOutside } = props;
+
+  // useEffect(() => {
+  //   const handleClickOutside = (event) => {
+  //     if (ref.current && !ref.current.contains(event.target)) {
+  //       onClickOutside && onClickOutside();
+  //     }
+  //   };
+  //   document.addEventListener('click', handleClickOutside, true);
+  //   return () => {
+  //     document.removeEventListener('click', handleClickOutside, true);
+  //   };
+  // }, [ onClickOutside ]);
 
   return (
     <div className=" ">

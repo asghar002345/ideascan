@@ -32,6 +32,7 @@ const SearchBar = () => {
   const closemenu = () => {
     setMenuopen(!menuopen)
   }
+
   return (
     <div className="font-poppins">
       <div className="flex items-center h-[100px] justify-center">

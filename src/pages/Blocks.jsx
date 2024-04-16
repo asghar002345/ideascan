@@ -27,7 +27,7 @@ const Blocks = () => {
 
   useEffect(() => {
     test();
-  }, []);
+  }, [statsData]);
 
   const recordsperpage = 11;
   const indexoflastrecord = currentpage * recordsperpage;
@@ -146,15 +146,15 @@ const Blocks = () => {
               >
                 <td className="pl-7 text-left py-3">{arr?.size}</td>
                 <td className="pl-7 text-left  py-3">
-                  {arr.timestamp}{" "}
+                  {arr.timestamp.slice(12,13)}m ago
                   <span className="block font-semibold text-[12px] text-[#9CA0A7]">
-                    {arr.date}
+                    {arr.timestamp.slice(0,10)} {arr.timestamp.slice(11,15)}
                   </span>{" "}
                 </td>
                 <td className="flex items-center pl-7 text-left py-3 mt-3">
                   {arr?.hash?.slice(0,12)}{" "}
                   <span>
-                    <img src={square} alt="" className="ml-2" />
+                    <img src={square} alt="" className="ml-2 cursor-pointer" />
                   </span>{" "}
                 </td>
                 <td className="pl-7 text-left py-3">{arr?.parent_hash.slice(0,12)}</td>

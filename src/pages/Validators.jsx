@@ -16,6 +16,20 @@ const Validators = () => {
   const numbers = [...Array(nPages + 1).keys()].slice(1)
   console.log(records)
 
+  // const test = async () => {
+  //   const res = await fetch(
+  //     `https://eth.blockscout.com/api/v2/main-page/transactions`
+  //   );
+  //   const response = await res.json();
+  //   setStatsData(response);
+  //   console.log("recent transactions")
+  //   console.log("This is Testing",statsData);
+  // };
+
+  // useEffect(() => {
+  //   test();
+  // }, []);
+
   function prePage(e) {
     e.preventDefault();
     if (currentpage !== 1) {

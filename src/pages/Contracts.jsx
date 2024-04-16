@@ -4,8 +4,9 @@ import { useState } from "react";
 import square from "../assests/pngs/square.png";
 import SearchBar from '../components/SearchBar.jsx';
 import SideBar from "../components/SideBar.jsx";
-
+import { useEffect } from "react";
 const Contracts = () => {
+  const [statsData, setStatsData] = useState([]);
   const [currentpage, setCurrentpage] = useState(1);
   const recordsperpage = 11;
   const indexoflastrecord = currentpage * recordsperpage;
@@ -14,6 +15,18 @@ const Contracts = () => {
   const nPages = Math.ceil(arraytest3.length / recordsperpage);
   const numbers = [...Array(nPages + 1).keys()].slice(1);
   console.log(records);
+  const test = async () => {
+    const res = await fetch(
+      `https://eth.blockscout.com/api/v2/blocks?type=block%20%7C%20uncle%20%7C%20reorg`
+    );
+    const response = await res.json();
+    setStatsData(response.items);
+    console.log("this is statsdata", statsData);
+  };
+
+  useEffect(() => {
+    test();
+  }, []);
 
   function prePage(e) {
     e.preventDefault();
@@ -49,7 +62,7 @@ const Contracts = () => {
               <th className="text-left pl-7 py-4">Contract_Adress</th>
               <th className="text-left pl-7 py-4">TxHash</th>
               <th className="text-left pl-7 py-4">Last_Executed_At</th>
-              <th className="text-left pl-7 py-4">Deployed_At</th>
+              {/* <th className="text-left pl-7 py-4">Deployed_At</th> */}
             </tr>
           </thead>
           <tbody className="">
@@ -73,7 +86,7 @@ const Contracts = () => {
                   </span>
                 </td>
                 <td className="pl-7 text-left py-3 ">{arr.Last_Executed_At}</td>
-                <td className="pl-7 text-left py-3">{arr.Deployed_At}</td>
+                {/* <td className="pl-7 text-left py-3">{arr.Deployed_At}</td> */}
               </tr>
             ))}
           </tbody>
