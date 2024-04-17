@@ -22,6 +22,8 @@ const Transactions = () => {
     ],
   });
 
+  const [singleItem, setSingleItem] = useState();
+
   const fetchData = async () => {
     try {
       const res = await fetch(
@@ -31,6 +33,8 @@ const Transactions = () => {
       console.log("Requested data which we get from block chain ");
       console.log(response);
       setStatsData(response);
+      setSingleItem(await statsData[0]);
+      console.log("this is single item============>>", singleItem);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -38,7 +42,7 @@ const Transactions = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [statsData]);
 
   useEffect(() => {
     if (statsData.length > 0) {
@@ -104,16 +108,16 @@ const Transactions = () => {
         <div className="justify-center ml-12 text-white flex lg:flex-col mx-3">
           <div className="px-1 text-center lg:text-left">
             <h1 className="my-3 text-[#9CA0A7]">Total Transactions</h1>
-            <p className="text-2xl mb-2">199.5 K</p>
+            <p className="text-2xl mb-2">{singleItem?.block}</p>
           </div>
           <div className="px-1 text-center lg:text-left">
             <h1 className="my-3 text-[#9CA0A7]">Contract Transaction</h1>
-            <p className="text-2xl mb-2">68</p>
+            <p className="text-2xl mb-2">{singleItem?.confirmations}</p>
           </div>
-          <div className="px-1 text-center lg:text-left">
+          {/* <div className="px-1 text-center lg:text-left">
             <h1 className="my-3 text-[#9CA0A7]">Gas Fee Paid</h1>
-            <p className="text-2xl mb-2">0.2597</p>
-          </div>
+            <p className="text-2xl mb-2">{(singleItem?.gas_price/100000000000).toFixed(3)}</p>
+          </div> */}
         </div>
         <div>
           <DynamicChart chartData={userData} className="" />

@@ -15,7 +15,7 @@ function Carddetailscarousel(props) {
   return (
     <div>
       <div className="mt-3">
-        <div className="w-[295px] xl:w-[300px] h-[150px] p-2 rounded-xl opacity-[100] bg-[#0F2434] text-white">
+        <div className="w-[295px] xl:w-[305px] h-[150px] py-2 px-2 rounded-xl bg-[#0F2434] text-white mx-auto md:mx-auto">
           <div className="flex justify-between items-center mx-4 py-2">
             <p className="text-blue-400 font-medium text-[16px]">{stats?.size}</p>
             <p className="mr-3 text-blue-200 font-semi-bold text-[16px]">
