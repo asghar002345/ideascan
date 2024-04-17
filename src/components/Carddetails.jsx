@@ -33,26 +33,26 @@ const Carddetails = () => {
       items: 5,
     },
     largedesktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 3000, min: 1280 },
       items: 4,
     },
     desktop: {
-      breakpoint: { max: 1024, min: 900},
+      breakpoint: { max: 1280, min: 1023},
       items: 3,
     },
     tablet: {
-      breakpoint: { max: 900, min: 464},
+      breakpoint: { max: 1023, min: 762},
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 762, min: 0 },
       items: 1,
     },
   };
 
   return (
     <div className="mx-4 font-poppins">
-      <div className="flex justify-between items-center px-3 sm:px-1 md:w-[40rem] lg:w-[60rem] xl:w-[80rem] mx-auto my-3">
+      <div className="flex justify-between items-center sm:px-1 md:w-[40rem] lg:w-[60rem] xl:w-[75rem] mx-auto my-3">
         <h1 className="font-bold text-[24px] text-white uppercase">
           Recent Blocks
         </h1>
@@ -66,7 +66,7 @@ const Carddetails = () => {
       {/* <Carousel responsive={responsive}>
           <Carddetailscarousel />
           </Carousel> */}
-      <div className="z-[2] w-[280px] mx-auto md:w-[700px] md:mx-6 lg:w-[970px] lg:mx-0 xl:w-[1280px] xl:mx-auto">
+      <div className="z-[2] w-[300px] mx-auto md:min-w-[700px] md:mx-6 lg:min-w-[970px] lg:mx-0 xl:w-[1255px] xl:mx-auto">
       <Carousel
         swipeable={true}
         draggable={true}

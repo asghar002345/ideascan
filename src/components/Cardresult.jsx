@@ -36,19 +36,19 @@ const Cardresult = () => {
       items: 5,
     },
     largedesktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 3000, min: 1280 },
       items: 4,
     },
     desktop: {
-      breakpoint: { max: 1024, min: 900},
+      breakpoint: { max: 1280, min: 1023},
       items: 3,
     },
     tablet: {
-      breakpoint: { max: 900, min: 464},
+      breakpoint: { max: 1023, min: 762},
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 762, min: 0 },
       items: 1,
     },
   };
@@ -62,7 +62,7 @@ const Cardresult = () => {
           View All
         </button>
       </div>
-      <div className="w-[320px] mx-auto md:w-[700px] lg:w-[1000px] xl:w-[1280px] md:mx-12 lg:mx-6 xl:mx-auto">
+      <div className="w-[320px] mx-auto md:w-[700px] lg:w-[965px] xl:w-[1280px] md:mx-12 lg:mx-6 xl:mx-auto">
       <Carousel
         swipeable={true}
         draggable={true}

@@ -11,17 +11,17 @@ const Contracts = () => {
   const recordsperpage = 11;
   const indexoflastrecord = currentpage * recordsperpage;
   const indexoffirstrecord = indexoflastrecord - recordsperpage;
-  const records = arraytest3.slice(indexoffirstrecord, indexoflastrecord);
-  const nPages = Math.ceil(arraytest3.length / recordsperpage);
+  const records = statsData.slice(indexoffirstrecord, indexoflastrecord);
+  const nPages = Math.ceil(statsData.length / recordsperpage);
   const numbers = [...Array(nPages + 1).keys()].slice(1);
   console.log(records);
   const test = async () => {
     const res = await fetch(
-      `https://eth.blockscout.com/api/v2/blocks?type=block%20%7C%20uncle%20%7C%20reorg`
+      `https://eth.blockscout.com/api/v2/tokens?q=USDT&type=ERC-20%2CERC-721%2CERC-1155`
     );
     const response = await res.json();
     setStatsData(response.items);
-    console.log("this is statsdata", statsData);
+    console.log("this is contracts", statsData);
   };
 
   useEffect(() => {
@@ -61,7 +61,7 @@ const Contracts = () => {
               <th className="text-left pl-7 py-4">Type</th>
               <th className="text-left pl-7 py-4">Contract_Adress</th>
               <th className="text-left pl-7 py-4">TxHash</th>
-              <th className="text-left pl-7 py-4">Last_Executed_At</th>
+              <th className="text-left pl-7 py-4">Last Executed At</th>
               {/* <th className="text-left pl-7 py-4">Deployed_At</th> */}
             </tr>
           </thead>
@@ -71,10 +71,10 @@ const Contracts = () => {
                 key={arr.id}
                 className="text-white bg-[#040F1C] border-b-[1px] border-[#0F2434] border-0 "
               >
-                <td className="pl-7 text-left py-3">{arr.Name}</td>
-                <td className="pl-7 text-left py-3">{arr.Type}</td>
+                <td className="pl-7 text-left py-3">{arr.name}</td>
+                <td className="pl-7 text-left py-3">{arr.type}</td>
                 <td className="pl-7 text-left py-3 text-[#0E83DB]">
-                  {arr.Contract_Adress}
+                  {arr.address.slice(0,13)}...
                   <span className="inline-flex pl-2">
                     <img src={square} />
                   </span>
