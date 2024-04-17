@@ -4,52 +4,60 @@ import { UserData } from "./Data1";
 
 const Hero = () => {
   const [chartData, setChartData] = useState();
-  // const [userData , setUserData]= useState()
-  // const test = async() =>{
-  //   try { 
-  //     const response = await fetch(`https://gnosis.blockscout.com/api/v2/stats/charts/transactions`)
-  //     const req = await response.json();
-  //     setChartData(req);
-  //     console.log('test',req)
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
-  // test();
-
-
 
   useEffect(() => {
-    const test = async () => {
-      const res = await fetch(`https://gnosis.blockscout.com/api/v2/stats/charts/transactions`);
-      const req = await res.json();
-      setChartData(req);
+    const fetchData = async () => {
+      try {
+        const res = await fetch(
+          `https://gnosis.blockscout.com/api/v2/stats/charts/transactions`
+        );
+        const req = await res.json();
+        console.log("Requested data which we get from block chain ");
+        console.log(req.chart_data);
+        setChartData(req.chart_data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
-    test();
+    fetchData();
   }, []);
 
-  const data = chartData?.chart_data;
-  console.log("datataaaa")
-  var label = data?.map((item) => item.date)
-  console.log(label);
-
   const [userData, setUserData] = useState({
-    labels: label,
+    labels: [],
     datasets: [
       {
         label: "Users Gained",
-        data: data?.map(b => b.tx_count),
+        data: [],
         borderWidth: 2,
         textColor: "white",
       },
     ],
   });
+
+  useEffect(() => {
+    if (chartData) {
+      const labels = chartData.map((item) => item.date);
+      const txCounts = chartData.map((item) => item.tx_count);
+      setUserData((prevUserData) => ({
+        ...prevUserData,
+        labels: labels,
+        datasets: [
+          {
+            ...prevUserData.datasets[0],
+            data: txCounts,
+          },
+        ],
+      }));
+    }
+  }, [chartData]);
+
+  console.log(chartData);
+
   return (
     <div className="">
-      {" "}
-      <Charts1 userData={userData} />{" "}
+      <Charts1 userData={userData} />
     </div>
   );
 };
 
-export default Hero;
+export default Hero;

@@ -75,14 +75,14 @@ const Contracts = () => {
                 <td className="pl-7 text-left py-3">{arr.type}</td>
                 <td className="pl-7 text-left py-3 text-[#0E83DB]">
                   {arr.address.slice(0,13)}...
-                  <span className="inline-flex pl-2">
+                  {/* <span className="inline-flex pl-2">
                     <img src={square} />
-                  </span>
+                  </span> */}
                 </td>
                 <td className="pl-7 text-left py-3 text-[#0E83DB]">
-                  {arr.TxHash}{" "}
+                  {}{" "}
                   <span className="inline-flex pl-1">
-                    <img src={square} />
+                    <img src={arr.icon_url} />
                   </span>
                 </td>
                 <td className="pl-7 text-left py-3 ">{arr.Last_Executed_At}</td>

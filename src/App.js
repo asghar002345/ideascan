@@ -39,9 +39,9 @@ function App() {
         <Route  path='/transactions' 
         element = {< Transactions />}
         />
-        <Route  path='/validators' 
+        {/* <Route  path='/validators' 
         element = {< Validators />}
-        />
+        /> */}
         <Route  path='/stats' 
         element = {< Stats_Graphs />}
         />

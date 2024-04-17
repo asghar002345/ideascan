@@ -11,30 +11,52 @@ import { Tooltip as ReactTooltip } from "react-tooltip";
 const Transactions = () => {
   const [statsData, setStatsData] = useState([]);
   const [userData, setUserData] = useState({
-    labels: UserData.map((data) => data.year),
+    labels: [],
     datasets: [
       {
         label: "Users Gained",
-        data: UserData.map((data) => data.userGain),
+        data: [],
         borderWidth: 2,
         // color:"white"
       },
     ],
   });
 
-  const test = async () => {
-    const res = await fetch(
-      `https://eth.blockscout.com/api/v2/main-page/transactions`
-    );
-    const response = await res.json();
-    setStatsData(response);
-    console.log("recent transactions");
-    console.log("This is Testing", statsData);
+  const fetchData = async () => {
+    try {
+      const res = await fetch(
+        `https://eth.blockscout.com/api/v2/main-page/transactions`
+      );
+      const response = await res.json();
+      console.log("Requested data which we get from block chain ");
+      console.log(response);
+      setStatsData(response);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
   useEffect(() => {
-    test();
+    fetchData();
   }, []);
+
+  useEffect(() => {
+    if (statsData.length > 0) {
+      const labels = statsData.map((arr) => arr.hash.slice(0, 14) + "...");
+      const data = statsData.map((arr) => arr.value.slice(0, 4));
+      setUserData({
+        labels: labels,
+        datasets: [
+          {
+            label: "Users Gained",
+            data: data,
+            borderWidth: 2,
+            // color:"white"
+          },
+        ],
+      });
+    }
+  }, [statsData]);
 
   const [currentpage, setCurrentpage] = useState(1);
   const recordsperpage = 11;
@@ -119,7 +141,9 @@ const Transactions = () => {
                   className="text-white bg-[#040F1C] border-b-[1px] border-0 border-[#0F2434] font-poppins font-bold text-[14px] "
                 >
                   <td className="pl-7 text-left py-3">
-                    <span data-tooltip-id={arr.hash}>{arr.hash.slice(0, 14)}...</span>
+                    <span data-tooltip-id={arr.hash}>
+                      {arr.hash.slice(0, 14)}...
+                    </span>
                     <ReactTooltip
                       id={arr.hash}
                       place="top"
@@ -133,11 +157,8 @@ const Transactions = () => {
                     {arr.block}
                   </td>
                   <td className="pl-7 text-left py-3">{arr.method}</td>
-                  <td
-                    
-                    className="pl-7 text-left py-3 flex items-center mt-2 text-[#0E83DB]"
-                  >
-                     <ReactTooltip
+                  <td className="pl-7 text-left py-3 flex items-center mt-2 text-[#0E83DB]">
+                    <ReactTooltip
                       id={arr.from.hash}
                       place="top"
                       className=""
@@ -145,17 +166,20 @@ const Transactions = () => {
                       style={{ backgroundColor: "#040F1C", color: "#0E83DB" }}
                       content={arr.from.hash}
                     />
-                    <span data-tooltip-id={arr.from.hash}>{arr.from.hash.slice(0, 14)}...{" "}</span>
+                    <span data-tooltip-id={arr.from.hash}>
+                      {arr.from.hash.slice(0, 14)}...{" "}
+                    </span>
                     <span className="inline-block pl-2">
                       <IoCopyOutline
                         className="hover:cursor-pointer"
                         onClick={() => copyText1(arr)}
                       />
                     </span>{" "}
-                   
                   </td>
                   <td className="pl-7 text-left py-3  text-[#0E83DB]">
-                    <span data-tooltip-id={arr.to.hash}>{arr.to.hash.slice(0, 14)}...</span>
+                    <span data-tooltip-id={arr.to.hash}>
+                      {arr.to.hash.slice(0, 14)}...
+                    </span>
                     <span className="inline-block pl-2 ">
                       <IoCopyOutline
                         className="hover:cursor-pointer"
@@ -231,4 +255,4 @@ const Transactions = () => {
   );
 };
 
-export default Transactions;
+export default Transactions;

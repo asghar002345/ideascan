@@ -39,11 +39,11 @@ export const menuItem = [
     path: "/assests",
     name: "Assests",
   },
-  {
-    id: "7",
-    path: "/validators",
-    name: "Validators",
-  },
+  // {
+  //   id: "7",
+  //   path: "/validators",
+  //   name: "Validators",
+  // },
   {
     id: "8",
     path: "/nodes",

@@ -15,7 +15,7 @@ const Charts = ({ userData }) => {
             It is a graphical representation of changes in token price.
           </p>
         </div>
-        <div className="mx-8 border rounded-lg border-[#212327] bg-[#252527] h-[30rem] mb-3">
+        <div className="mx-8  rounded-lg bg-[#252527] h-[30rem] mb-3">
           <div>
             <p className="text-white py-4 pl-3">Token Price 0.00838 ⓘ</p>
           </div>

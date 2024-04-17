@@ -96,14 +96,16 @@ const Blocks = () => {
         </div>
         <div className="rounded-xl mx-auto flex flex-row w-64 md:w-72 lg:w-80 xl:w-96 items-center justify-center bg-gradient-to-l bg-[#040F1C] py-4 md:py-6 lg:py-0 my-3 lg:px-3 xl:px-0">
           <div class="relative items-center block max-w-sm p-6 rounded-lg shadow-md">
-            <p className="flex flex-col text-white items-center font-poppins font-bold text-[12px]">1 Second <span>Round Time</span></p>
+            <p className="flex flex-col text-white items-center font-poppins font-bold text-[12px]">
+              1 Second <span className="hidden md:visible">Round Time</span>
+            </p>
             <div
               role="status"
               class="absolute -translate-x-1/2 -translate-y-1/2 top-2/4 left-1/2"
             >
               <svg
                 aria-hidden="true"
-                class="w-36 h-32 text-gray-200 animate-spin  fill-blue-600"
+                class="w-28 h-28 md:w-36 md:h-32 text-gray-200 animate-spin  fill-blue-600"
                 viewBox="0 0 100 101"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -119,6 +121,14 @@ const Blocks = () => {
               </svg>
               <span class="sr-only">Loading...</span>
             </div>
+            {/* <div
+              className="absolute top-0 right-1 h-[7rem] w-[7rem] animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-blue-500"
+              role="status"
+            >
+              <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                Loading...
+              </span>
+            </div> */}
           </div>
           <div className="text-center text-white font-semibold text-xl pl-12">
             <p>Block Time</p>
@@ -146,18 +156,20 @@ const Blocks = () => {
               >
                 <td className="pl-7 text-left py-3">{arr?.size}</td>
                 <td className="pl-7 text-left  py-3">
-                  {arr.timestamp.slice(12,13)}m ago
+                  {arr.timestamp.slice(12, 13)}m ago
                   <span className="block font-semibold text-[12px] text-[#9CA0A7]">
-                    {arr.timestamp.slice(0,10)} {arr.timestamp.slice(11,15)}
+                    {arr.timestamp.slice(0, 10)} {arr.timestamp.slice(11, 15)}
                   </span>{" "}
                 </td>
                 <td className="flex items-center pl-7 text-left py-3 mt-3">
-                  {arr?.hash?.slice(0,12)}{" "}
+                  {arr?.hash?.slice(0, 12)}{" "}
                   <span>
                     <img src={square} alt="" className="ml-2 cursor-pointer" />
                   </span>{" "}
                 </td>
-                <td className="pl-7 text-left py-3">{arr?.parent_hash.slice(0,12)}</td>
+                <td className="pl-7 text-left py-3">
+                  {arr?.parent_hash.slice(0, 12)}
+                </td>
                 <td className="pl-7 text-left py-3">{arr?.tx_count}</td>
                 <td className="pl-7 text-left py-3">{arr.gas_used}</td>
               </tr>
