@@ -105,7 +105,7 @@ const Transactions = () => {
         </h1>
       </div>
       <div className="bg-[#0F2434] flex flex-col lg:flex-row xl:flex-row rounded-xl shadow-lg w-full md:w-[40rem] lg:w-[60rem] xl:w-[80rem] h-[28rem] items-center mx-auto  my-5">
-        <div className="justify-center ml-12 text-white flex lg:flex-col mx-3">
+        <div className="justify-center  text-white flex lg:flex-col mx-8">
           <div className="px-1 text-center lg:text-left">
             <h1 className="my-3 text-[#9CA0A7]">Total Transactions</h1>
             <p className="text-2xl mb-2">{singleItem?.block}</p>
@@ -157,7 +157,7 @@ const Transactions = () => {
                       content={arr.from.hash}
                     />
                   </td>
-                  <td className="pl-7 text-left py-3 text-[#0E83DB]">
+                  <td className="pl-7 text-left py-3 text-[#0E83DB] overflow-hidden">
                     {arr.block}
                   </td>
                   <td className="pl-7 text-left py-3">{arr.method}</td>

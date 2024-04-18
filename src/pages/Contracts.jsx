@@ -72,7 +72,7 @@ const Contracts = () => {
                 className="text-white bg-[#040F1C] border-b-[1px] border-[#0F2434] border-0 "
               >
                 <td className="pl-7 text-left py-3">{arr.name}</td>
-                <td className="pl-7 text-left py-3">{arr.type}</td>
+                <td className="pl-7 text-left py-3">IDE-20</td>
                 <td className="pl-7 text-left py-3 text-[#0E83DB]">
                   {arr.address.slice(0,13)}...
                   {/* <span className="inline-flex pl-2">
