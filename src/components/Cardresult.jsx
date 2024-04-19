@@ -45,11 +45,11 @@ const responsive = {
     items: 3,
   },
   tablet: {
-    breakpoint: { max: 1023, min: 767},
+    breakpoint: { max: 1023, min: 762},
     items: 2,
   },
   mobile: {
-    breakpoint: { max: 767, min: 0 },
+    breakpoint: { max: 762, min: 0 },
     items: 1,
   },
 };
@@ -66,7 +66,7 @@ const responsive = {
           View All
         </button>
       </div>
-      <div className="w-[320px] mx-auto md:w-[700px] lg:w-[1000px] xl:w-[1280px] md:mx-12 lg:mx-6 xl:mx-auto">
+      <div className="w-[320px] mx-auto md:w-[700px] lg:w-[970px] xl:w-[1280px] md:mx-6 lg:mx-0 xl:mx-auto">
         <Carousel
           swipeable={true}
           draggable={true}
