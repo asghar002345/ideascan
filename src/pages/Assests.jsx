@@ -56,12 +56,12 @@ const Assests = () => {
     <div className="  ">
       <SearchBar />
       <div className="flex flex-col pb-20">
-        <div className="w-[60rem] mx-auto ">
-          <h1 className="text-white font-bold text-2xl mt-6 text-left">
+        <div className="w-[22rem] md:min-w-[38rem] lg:w-[60rem] xl:w-[60rem] mx-auto pl-6 sm:pl-0 text-left">
+          <h1 className="font-bold font-poppins text-2xl mt-3 text-left text-white ">
             Assests
           </h1>
         </div>
-        <div className="rounded-lg overflow-x-auto">
+        <div className="rounded-lg overflow-x-auto mx-3">
           <table className="items-center mt-9 w-[60rem] justify-center rounded-lg text-left mx-auto">
             <thead className="bg-[#0F2434] rounded-lg text-white text-lg ">
               <tr className="text-white rounded-xl">

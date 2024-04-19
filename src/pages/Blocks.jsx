@@ -7,6 +7,7 @@ import SearchBar from "../components/SearchBar.jsx";
 import img1 from "../assests/pngs/Block1.png";
 import img2 from "../assests/pngs/Block2.png";
 import img3 from "../assests/pngs/Block3.png";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 const Blocks = () => {
   const [currentpage, setCurrentpage] = useState(1);
@@ -69,7 +70,7 @@ const Blocks = () => {
       <div className="mt-3 w-[19rem] lg:w-[63rem] xl:w-[80rem] mx-auto">
         <h1 className="flex">
           <img src={block} className="w-7" alt="" />
-          <span className="ml-3 text-white text-2xl font-bold">Blocks</span>
+          <span className="ml-3 text-white text-[21px] sm:text-2xl font-bold">Blocks</span>
         </h1>
       </div>
       <div className="rounded-xl flex flex-col lg:flex-row my-4 md:mx-auto lg:mx-auto xl:mx-auto w-[19rem] mx-auto lg:w-[63rem] xl:w-[80rem] bg-[#0F2434]">
@@ -80,18 +81,18 @@ const Blocks = () => {
           <div>
             <img src={img1} alt="logos" className="" />
           </div>
-          <div className="text-center text-white font-semibold text-xl">
-            <p className="pt-2">Top Validators (Last 24H)</p>
-            <p>{singleItem?.hash?.slice(0, 12)}...</p>
+          <div className="text-center text-white font-semibold ">
+            <p className="pt-2 text-[16px] md:text-xl">Top Validators (Last 24H)</p>
+            <p className="text-14px md:text-xl">{singleItem?.hash?.slice(0, 12)}...</p>
           </div>
         </div>
         <div className="rounded-xl mx-auto flex flex-col w-64 md:w-72 lg:w-80 xl:w-96 items-center justify-center bg-gradient-to-l bg-[#040F1C] py-4 md:py-6 lg:py-0 my-3 lg:px-3 xl:px-0">
           <div>
             <img src={img2} alt="logos" className="" />
           </div>
-          <div className="text-center text-white font-semibold text-xl">
-            <p className="pt-2">Latest Block</p>
-            <p>{singleItem?.size}</p>
+          <div className="text-center text-white font-semibold">
+            <p className="pt-2 text-[14px] md:text-xl">Latest Block</p>
+            <p className="text-[14px] md:text-xl">{singleItem?.size}</p>
           </div>
         </div>
         <div className="rounded-xl mx-auto flex flex-row w-64 md:w-72 lg:w-80 xl:w-96 items-center justify-center bg-gradient-to-l bg-[#040F1C] py-4 md:py-6 lg:py-0 my-3 lg:px-3 xl:px-0">
@@ -105,7 +106,7 @@ const Blocks = () => {
             >
               <svg
                 aria-hidden="true"
-                class="w-28 h-28 md:w-36 md:h-32 text-gray-200 animate-spin  fill-blue-600"
+                class="w-20 h-28 md:w-24 lg:w-36 md:h-32 text-gray-200 animate-spin  fill-blue-600"
                 viewBox="0 0 100 101"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -130,45 +131,61 @@ const Blocks = () => {
               </span>
             </div> */}
           </div>
-          <div className="text-center text-white font-semibold text-xl pl-12">
-            <p>Block Time</p>
+          <div className="text-center text-white font-semibold  pl-4 md:pl-12">
+            <p className="text-[14px] md:text-xl">Block Time</p>
           </div>
         </div>
         {/* </div> */}
       </div>
-      <div className="rounded-lg overflow-x-auto">
-        <table className="items-center mt-9 mx-auto lg:w-[62.5rem] xl:w-[80rem] rounded-lg text-left sm:w-[50rem] ">
+      <div className="rounded-lg overflow-x-auto mx-3">
+        <table className="items-center mt-9 mx-auto lg:w-[62.5rem] xl:w-[80rem] rounded-lg text-left sm:w-[50rem] w-[43rem] ">
           <thead className="bg-[#0F2434] rounded-lg text-white text-lg ">
-            <tr className="text-white rounded-xl">
-              <th className="text-left pl-7 py-4 "> Block </th>
-              <th className="text-left pl-7 py-4">Time stamp</th>
-              <th className="text-left pl-7 py-4">Block Hash</th>
-              <th className="text-left pl-7 py-4">Validator</th>
-              <th className="text-left pl-7 py-4">Transaction Count</th>
-              <th className="text-left pl-7 py-4">Gas Used</th>
+            <tr className="text-white rounded-xl text-[14px] md:text-[16px] ">
+              <th className="sm:text-left pl-7 py-4 "> Block </th>
+              <th className="sm:text-left pl-7 py-4">Time stamp</th>
+              <th className="sm:text-left pl-7 py-4">Block Hash</th>
+              <th className="sm:text-left pl-7 py-4">Validator</th>
+              <th className="sm:text-left pl-7 py-4">Transaction Count</th>
+              <th className="sm:text-left pl-7 py-4">Gas Used</th>
             </tr>
           </thead>
           <tbody className="">
             {records.map((arr) => (
               <tr
                 key={arr.id}
-                className="text-white bg-[#040F1C] border-b-[1px] border-0 border-[#0F2434] font-poppins font-[700]"
+                className="text-white bg-[#040F1C] border-b-[1px] border-0 border-[#0F2434] font-poppins font-[700] text-[8px] sm:text-[16px]"
               >
-                <td className="pl-7 text-left py-3">{arr?.size}</td>
+                <td className="pl-7 text-left py-3 text-[#1283D7]">{arr?.size}</td>
                 <td className="pl-7 text-left  py-3">
                   {arr.timestamp.slice(12, 13)}m ago
                   <span className="block font-semibold text-[12px] text-[#9CA0A7]">
                     {arr.timestamp.slice(0, 10)} {arr.timestamp.slice(11, 15)}
                   </span>{" "}
                 </td>
-                <td className="flex items-center pl-7 text-left py-3 mt-3">
+                <td data-tooltip-id={arr.hash} className="flex items-center pl-7 text-left py-3 mt-3">
                   {arr?.hash?.slice(0, 12)}{" "}
                   <span>
                     <img src={square} alt="" className="ml-2 cursor-pointer" />
                   </span>{" "}
+                  <ReactTooltip
+                      id={arr?.hash}
+                      place="top"
+                      className=""
+                      // variant="danger"
+                      style={{ backgroundColor: "#040F1C", color: "white" }}
+                      content={arr.hash}
+                    />
                 </td>
-                <td className="pl-7 text-left py-3">
+                <td data-tooltip-id={arr.parent_hash} className="pl-7 text-left py-3">
                   {arr?.parent_hash.slice(0, 12)}
+                  <ReactTooltip
+                      id={arr?.parent_hash}
+                      place="top"
+                      className=""
+                      // variant="danger"
+                      style={{ backgroundColor: "#040F1C", color: "white" }}
+                      content={arr.parent_hash}
+                    />
                 </td>
                 <td className="pl-7 text-left py-3">{arr?.tx_count}</td>
                 <td className="pl-7 text-left py-3">{arr.gas_used}</td>

@@ -14,8 +14,7 @@ const Home = () => {
 
   return (
     <div>
-      {/* <div className='bg-center bg-cover' style={{backgroundImage: url(${bg1})
-      }}>
+      {/* <div className='bg-center bg-cover' style={{backgroundImage: url(${bg1})}}>
         <SearchBar />
         <Cards />
       </div> */}

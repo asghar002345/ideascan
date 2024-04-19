@@ -99,19 +99,19 @@ const Transactions = () => {
   return (
     <div>
       <SearchBar />
-      <div className="md:w-[40rem] lg:w-[60rem] xl:w-[80rem] mx-auto">
+      <div className="md:w-[40rem] lg:w-[60rem] xl:w-[80rem] mx-auto pl-8 sm:pl-0">
         <h1 className="font-bold font-poppins text-2xl mt-3 text-left text-white">
           Transactions
         </h1>
       </div>
       <div className="bg-[#0F2434] flex flex-col lg:flex-row xl:flex-row rounded-xl shadow-lg w-full md:w-[40rem] lg:w-[60rem] xl:w-[80rem] h-[28rem] items-center mx-auto  my-5">
         <div className="justify-center  text-white flex lg:flex-col mx-8">
-          <div className="px-1 text-center lg:text-left">
-            <h1 className="my-3 text-[#9CA0A7]">Total Transactions</h1>
-            <p className="text-2xl mb-2">{singleItem?.block}</p>
+          <div className="px-4 text-center lg:text-left">
+            <h1 className="my-3 text-[#9CA0A7] text-[12px]">Total Transactions</h1>
+            <p className="text-2xl mb-2">{((singleItem?.block)/10000000).toFixed(2)}</p>
           </div>
           <div className="px-1 text-center lg:text-left">
-            <h1 className="my-3 text-[#9CA0A7]">Contract Transaction</h1>
+            <h1 className="my-3 text-[#9CA0A7] text-[12px]">Contract Transaction</h1>
             <p className="text-2xl mb-2">{singleItem?.confirmations}</p>
           </div>
           {/* <div className="px-1 text-center lg:text-left">
@@ -124,7 +124,7 @@ const Transactions = () => {
         </div>
       </div>
       <div>
-        <div className="rounded-lg overflow-x-auto">
+        <div className="rounded-lg overflow-x-auto mx-3">
           <table className="items-center mx-auto mt-9 w-[80rem] rounded-lg text-left">
             <thead className="bg-[#0F2434] rounded-lg text-white font-bold font-poppins ">
               <tr className="text-white rounded-xl">
@@ -146,15 +146,15 @@ const Transactions = () => {
                 >
                   <td className="pl-7 text-left py-3">
                     <span data-tooltip-id={arr.hash}>
-                      {arr.hash.slice(0, 14)}...
+                      {arr?.hash.slice(0, 14)}...
                     </span>
                     <ReactTooltip
-                      id={arr.hash}
+                      id={arr?.hash}
                       place="top"
                       className=""
                       // variant="danger"
                       style={{ backgroundColor: "#040F1C", color: "white" }}
-                      content={arr.from.hash}
+                      content={arr.hash}
                     />
                   </td>
                   <td className="pl-7 text-left py-3 text-[#0E83DB] overflow-hidden">
@@ -163,12 +163,12 @@ const Transactions = () => {
                   <td className="pl-7 text-left py-3">{arr.method}</td>
                   <td className="pl-7 text-left py-3 flex items-center mt-2 text-[#0E83DB]">
                     <ReactTooltip
-                      id={arr.from.hash}
+                      id={arr.method}
                       place="top"
                       className=""
                       // variant="danger"
                       style={{ backgroundColor: "#040F1C", color: "#0E83DB" }}
-                      content={arr.from.hash}
+                      content={arr.method}
                     />
                     <span data-tooltip-id={arr.from.hash}>
                       {arr.from.hash.slice(0, 14)}...{" "}
