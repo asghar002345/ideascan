@@ -43,7 +43,7 @@ const SearchBar = () => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search for any address, transaction or block"
-            className="border border-[#CDDFE5] border-opacity-[0.1] w-[20rem] sm:w-[600px] pl-11 py-3 sm:py-6 bg-[#081015]  bg-opacity-[0.8] text-white font-poppins tracking-wide z-[-8] font-bold rounded-xl stroke-black outline-none  placeholder:text-[15px] sm:placeholder-white placeholder-transparent "
+            className="border border-[#CDDFE5] border-opacity-[0.1] w-[20rem] sm:w-[600px] pl-11 pr-[5.5rem] sm:pr-32 md:pr-[8rem] lg:pr-32 py-3 sm:py-6 bg-[#081015]  bg-opacity-[0.8] text-white font-poppins tracking-wide z-[-8] font-bold rounded-xl stroke-black outline-none  placeholder:text-[15px] sm:placeholder-white placeholder-transparent "
           />
           <button
             className="text-white font-bold sm:text-[18px] border-transparent rounded-lg my-[0.4rem] py-[0.5rem] mr-3 sm:mr-5 sm:px-3 px-1 w-16 sm:w-24 cursor-pointer absolute bg-[#0086FF] right-0"
