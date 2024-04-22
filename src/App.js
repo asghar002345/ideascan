@@ -13,6 +13,7 @@ import Validators from './pages/Validators.jsx'
 import Transactions from './pages/Transactions.jsx'
 import Faucet from './pages/Faucet.jsx';
 import Assests from './pages/Assests.jsx';
+import Searchresult from './pages/Searchresult.jsx';
 
 
 function App() {
@@ -47,6 +48,9 @@ function App() {
         />
         <Route  path='/faucet' 
         element = {< Faucet />}
+        />
+        <Route  path='/searchresult' 
+        element = {< Searchresult />}
         />
       </Routes>
       {/* <Home /> */}

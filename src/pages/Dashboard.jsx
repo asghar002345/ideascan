@@ -26,7 +26,7 @@ const Home = () => {
           muted
           className="w-[100%] h-[100vh] object-cover"
         ></video>
-        <div className="absolute top-20 sm:top-32 w-[100%] h-[100%]">
+        <div className="absolute top-5 sm:top-32 w-[100%] h-[100%]">
           <SearchBar />
           <Cards />
         </div>
