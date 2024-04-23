@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <div className="flex justify-between bg-[#181919] w-full text-white items-center h-[70px] font-poppins">
       <div className="ml-2 md:ml-12">
-        <img src={logoc} alt="logo" className="w-52  lg:ml-14" />
+        <img src={logoc} alt="logo" className="w-52 lg:ml-14" />
         {/* <img src={logo1} alt="logo1" className="pl-3" /> */}
       </div>
       <div  className='mr-3 md:mr-16'> {<SideBar />}</div>

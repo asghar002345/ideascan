@@ -19,7 +19,7 @@ const Charts = ({ chartData, options }) => {
       }, []);
     return (
         <div className='flex flex-col md:flex-col items-center md:items-center lg:flex-row mt-14 justify-center lg:w-[65rem] xl:w-[83rem] mx-auto'>
-            <div className='rounded-lg w-[22rem] h-[23rem] sm:w-[40rem] md:w-[35rem] bg-[#2A82C4] bg-opacity-[0.18] lg:w-[39rem] xl:w-[63rem]  md:mx-7 mb-3 md:h-[34rem]'>
+            <div className='rounded-lg w-[19rem] h-[23rem] sm:w-[40rem] md:w-[35rem] bg-[#2A82C4] bg-opacity-[0.18] lg:w-[39rem] xl:w-[63rem]  md:mx-7 mb-3 md:h-[34rem]'>
                 <Line data={chartData} options={{ maintainAspectRatio: false }}  className='' />
             </div>
             <div>
