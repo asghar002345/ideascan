@@ -19,7 +19,6 @@ const Cardresultcarousel = (props) => {
     /* Copy text into clipboard */
     navigator.clipboard.writeText(stats?.hash);
   }
-
   return (
     <div className="">
       <div className="">

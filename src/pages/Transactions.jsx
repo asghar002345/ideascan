@@ -104,7 +104,7 @@ const Transactions = () => {
           Transactions
         </h1>
       </div>
-      <div className="bg-[#0F2434] flex flex-col lg:flex-row xl:flex-row rounded-xl shadow-lg w-full md:w-[40rem] lg:w-[60rem] xl:w-[80rem] h-[28rem] items-center mx-auto  my-5">
+      <div className="bg-[#0F2434] flex flex-col lg:flex-row xl:flex-row rounded-xl shadow-lg w-[23rem] sm:w-full md:w-[40rem] lg:w-[60rem] xl:w-[80rem] h-[28rem] items-center mx-auto  my-5">
         <div className="justify-center  text-white flex lg:flex-col mx-8">
           <div className="px-4 text-center lg:text-left">
             <h1 className="my-3 text-[#9CA0A7] text-[12px]">Total Transactions</h1>
@@ -160,19 +160,19 @@ const Transactions = () => {
                   <td className="pl-7 text-left py-3 text-[#0E83DB] overflow-hidden">
                     {arr.block}
                   </td>
-                  <td className="pl-7 text-left py-3">{arr.method}</td>
+                  <td className="pl-7 text-left py-3 w-[7rem] overflow-x-auto">{arr.method}</td>
                   <td className="pl-7 text-left py-3 flex items-center mt-2 text-[#0E83DB]">
+                    <span data-tooltip-id={arr.from.hash}>
+                      {arr.from.hash.slice(0, 14)}...{" "}
+                    </span>
                     <ReactTooltip
-                      id={arr.method}
+                      id={arr.from.hash}
                       place="top"
                       className=""
                       // variant="danger"
                       style={{ backgroundColor: "#040F1C", color: "#0E83DB" }}
-                      content={arr.method}
+                      content={arr.from.hash}
                     />
-                    <span data-tooltip-id={arr.from.hash}>
-                      {arr.from.hash.slice(0, 14)}...{" "}
-                    </span>
                     <span className="inline-block pl-2">
                       <IoCopyOutline
                         className="hover:cursor-pointer"

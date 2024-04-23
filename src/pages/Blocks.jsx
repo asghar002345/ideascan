@@ -8,6 +8,7 @@ import img1 from "../assests/pngs/Block1.png";
 import img2 from "../assests/pngs/Block2.png";
 import img3 from "../assests/pngs/Block3.png";
 import { Tooltip as ReactTooltip } from "react-tooltip";
+import { IoCopyOutline } from "react-icons/io5";
 
 const Blocks = () => {
   const [currentpage, setCurrentpage] = useState(1);
@@ -54,6 +55,10 @@ const Blocks = () => {
     e.preventDefault();
     setCurrentpage(id);
   }
+  function copyText(arr) {
+    /* Copy text into clipboard */
+    navigator.clipboard.writeText(arr?.hash);
+  }
 
   // const handlepagechange = (pagenumber) => {
   //   setCurrentpage(pagenumber)
@@ -67,17 +72,17 @@ const Blocks = () => {
   return (
     <div>
       <SearchBar />
-      <div className="mt-3 w-[19rem] lg:w-[63rem] xl:w-[80rem] mx-auto">
+      <div className="mt-3 w-[19rem] lg:w-[60rem] xl:w-[80rem] mx-auto">
         <h1 className="flex">
           <img src={block} className="w-7" alt="" />
           <span className="ml-3 text-white text-[21px] sm:text-2xl font-bold">Blocks</span>
         </h1>
       </div>
-      <div className="rounded-xl flex flex-col lg:flex-row my-4 md:mx-auto lg:mx-auto xl:mx-auto w-[19rem] mx-auto lg:w-[63rem] xl:w-[80rem] bg-[#0F2434]">
+      <div className="rounded-xl flex flex-col lg:flex-row my-4 md:mx-auto lg:mx-auto xl:mx-auto w-[19rem] mx-auto lg:w-[60rem] xl:w-[80rem] bg-[#0F2434]">
         {/* <div
              className="rounded-xl mx-auto flex flex-col md:flex-row w-64 md:w-72 lg:w-80 xl:w-96 items-center justify-center bg-gradient-to-l bg-[#040F1C] py-4 md:py-6 lg:py-0 my-3 lg:px-3 xl:px-0"
           > */}
-        <div className="rounded-xl mx-auto flex flex-col w-64 md:w-72 lg:w-80 xl:w-96 items-center justify-center bg-gradient-to-l bg-[#040F1C] py-4 md:py-6 lg:py-0 my-3 lg:px-3 xl:px-0">
+        <div className="rounded-xl mx-auto flex flex-col w-64 md:w-72 lg:w-72 xl:w-96 items-center justify-center bg-gradient-to-l bg-[#040F1C] py-4 md:py-6 lg:py-0 my-3 lg:px-2 xl:px-0">
           <div>
             <img src={img1} alt="logos" className="" />
           </div>
@@ -86,7 +91,7 @@ const Blocks = () => {
             <p className="text-14px md:text-xl">{singleItem?.hash?.slice(0, 12)}...</p>
           </div>
         </div>
-        <div className="rounded-xl mx-auto flex flex-col w-64 md:w-72 lg:w-80 xl:w-96 items-center justify-center bg-gradient-to-l bg-[#040F1C] py-4 md:py-6 lg:py-0 my-3 lg:px-3 xl:px-0">
+        <div className="rounded-xl mx-auto flex flex-col w-64 md:w-72 lg:w-72 xl:w-96 items-center justify-center bg-gradient-to-l bg-[#040F1C] py-4 md:py-6 lg:py-0 my-3 lg:px-2 xl:px-0">
           <div>
             <img src={img2} alt="logos" className="" />
           </div>
@@ -95,7 +100,7 @@ const Blocks = () => {
             <p className="text-[14px] md:text-xl">{singleItem?.size}</p>
           </div>
         </div>
-        <div className="rounded-xl mx-auto flex flex-row w-64 md:w-72 lg:w-80 xl:w-96 items-center justify-center bg-gradient-to-l bg-[#040F1C] py-4 md:py-6 lg:py-0 my-3 lg:px-3 xl:px-0">
+        <div className="rounded-xl mx-auto flex flex-row w-64 md:w-72 lg:w-72 xl:w-96 items-center justify-center bg-gradient-to-l bg-[#040F1C] py-4 md:py-6 lg:py-0 my-3 lg:px-2 xl:px-0">
           <div class="relative items-center block max-w-sm p-6 rounded-lg shadow-md">
             <p className="flex flex-col text-white items-center font-poppins font-bold text-[12px]">
               1 Second <span className="hidden md:visible">Round Time</span>
@@ -137,8 +142,8 @@ const Blocks = () => {
         </div>
         {/* </div> */}
       </div>
-      <div className="rounded-lg overflow-x-auto mx-3">
-        <table className="items-center mt-9 mx-auto lg:w-[62.5rem] xl:w-[80rem] rounded-lg text-left sm:w-[50rem] w-[43rem] ">
+      <div className="overflow-x-auto mx-2 sm:mx-4">
+        <table className="items-center mt-9 mx-auto lg:w-[60rem] xl:w-[80rem] rounded-lg text-left sm:w-[50rem] w-[43rem] ">
           <thead className="bg-[#0F2434] rounded-lg text-white text-lg ">
             <tr className="text-white rounded-xl text-[14px] md:text-[16px] ">
               <th className="sm:text-left pl-7 py-4 "> Block </th>
@@ -164,9 +169,12 @@ const Blocks = () => {
                 </td>
                 <td data-tooltip-id={arr.hash} className="flex items-center pl-7 text-left py-3 mt-3">
                   {arr?.hash?.slice(0, 12)}{" "}
-                  <span>
-                    <img src={square} alt="" className="ml-2 cursor-pointer" />
-                  </span>{" "}
+                  <span className="inline-block pl-2">
+                      <IoCopyOutline
+                        className="hover:cursor-pointer"
+                        onClick={() => copyText(arr)}
+                      />
+                    </span>{" "}
                   <ReactTooltip
                       id={arr?.hash}
                       place="top"
@@ -195,7 +203,7 @@ const Blocks = () => {
         </table>
         <div>
           <nav>
-            <ul className="text-white items-center mx-auto w-[43rem] lg:w-[62.5rem] xl:w-[80rem] sm:w-[50rem] flex flex-row h-7 py-7 mb-12 justify-center bg-[#071120] ">
+            <ul className="text-white items-center mx-auto w-[43rem] lg:w-[60rem] xl:w-[80rem] sm:w-[50rem] flex flex-row h-7 py-7 mb-12 justify-center bg-[#040F1C] ">
               <li className="mr-3">
                 <a
                   href="#"

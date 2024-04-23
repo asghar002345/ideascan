@@ -29,7 +29,6 @@ const Cardresult = ({ mod, setMod }) => {
     setModelopen(!modelopen);
     setMod(!mod);
   };
-
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -68,11 +67,14 @@ const responsive = {
       </div>
       <div className="w-[320px] mx-auto md:w-[700px] lg:w-[970px] xl:w-[1280px] md:mx-6 lg:mx-0 xl:mx-auto">
         <Carousel
-          swipeable={true}
+          swipeable={false}
           draggable={true}
           showDots={false}
           responsive={responsive}
-          arrows={!modelopen && !mod}
+          infinite={true}
+          autoPlay={true}
+          autoPlaySpeed={1000}
+          arrows= {false}
         >
           {/* Map over your data and render multiple instances of Carddetailscarousel */}
           {statsData.map((stats) => (
