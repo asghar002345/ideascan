@@ -61,7 +61,7 @@ const Assests = () => {
             Assests
           </h1>
         </div>
-        <div className="rounded-lg overflow-x-auto mx-3">
+        <div className="rounded-lg overflow-x-auto mx-2">
           <table className="items-center mt-9 w-[60rem] justify-center rounded-lg text-left mx-auto">
             <thead className="bg-[#0F2434] rounded-lg text-white text-lg ">
               <tr className="text-white rounded-xl">
@@ -103,7 +103,7 @@ const Assests = () => {
           </table>
           <div className="">
             <nav>
-              <ul className="text-white mx-auto  w-[60rem] flex flex-row justify-center py-3 bg-[#071120] ">
+              <ul className="text-white mx-auto w-[60rem] flex flex-row justify-center py-3 bg-[#071120] ">
                 <li className="mr-3">
                   <a
                     href="#"
