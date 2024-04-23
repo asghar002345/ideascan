@@ -24,7 +24,7 @@ const Assests = () => {
 
   function copyText1(arr) {
     /* Copy text into clipboard */
-    navigator.clipboard.writeText(arr?.from?.hash);
+    navigator.clipboard.writeText(arr?.address);
   }
 
   const [currentpage, setCurrentpage] = useState(1);
