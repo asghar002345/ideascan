@@ -16,7 +16,7 @@ const Faucet = () => {
         </div>
       </div>
       <hr className='bg-[#3B3B3D] h-1 w-72 md:w-[28rem] lg:h-56 lg:w-0.5 my-4 lg:my-0'/>
-      <div className='bg-[#3B3B3D] w-[17rem] md:w-[30rem] h-40 flex flex-col justify-center items-center lg:mx-6 xl:mr-12 rounded-lg '>
+      <div className='bg-[#3B3B3D] w-[17rem] md:w-[30rem] h-[12rem] sm:h-40 flex flex-col justify-center items-center lg:mx-6 xl:mr-12 rounded-lg '>
         <div>
         <p className='w-48 md:w-80 text-white'>Use the button below to add Shido network to your metamask wallet extension</p>
         </div>
