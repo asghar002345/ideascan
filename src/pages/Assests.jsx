@@ -61,7 +61,7 @@ const Assests = () => {
             Assests
           </h1>
         </div>
-        <div className="rounded-lg overflow-x-auto mx-2">
+        <div className="rounded-lg overflow-x-auto mx-3">
           <table className="items-center mt-9 w-[60rem] justify-center rounded-lg text-left mx-auto">
             <thead className="bg-[#0F2434] rounded-lg text-white text-lg ">
               <tr className="text-white rounded-xl">
