@@ -56,7 +56,7 @@ const Assests = () => {
     <div className="  ">
       <SearchBar />
       <div className="flex flex-col pb-20">
-        <div className="w-[22rem] md:min-w-[38rem] lg:w-[60rem] xl:w-[60rem] mx-auto pl-6 sm:pl-0 text-left">
+        <div className="sm:w-[30rem] md:min-w-[38rem] lg:w-[60rem] xl:w-[60rem] mx-auto pl-6 sm:pl-0 text-left">
           <h1 className="font-bold font-poppins text-2xl mt-3 text-left text-white ">
             Assests
           </h1>
