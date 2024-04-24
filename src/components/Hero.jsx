@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Charts from "./Charts";
 
 const Hero = () => {
+  const [arr, setArr] = useState([]);
   const [userData, setUserData] = useState({
     labels: [],
     datasets: [
@@ -22,9 +23,12 @@ const Hero = () => {
         const { chart_data } = await res.json();
         console.log("Requested data which we get from block chain ");
         console.log(chart_data);
+        chart_data.map((item)=> arr.push(item.date?.substring(8)));
+        let test= arr?.slice(0,8)
+        
 
-        const labels = chart_data.map((item) => item.date);
-        const txCounts = chart_data.map((item) => item.tx_count);
+        const labels = test;
+        const txCounts = chart_data.map((item) => (item.tx_count/1000));
 
         setUserData((prevUserData) => ({
           ...prevUserData,

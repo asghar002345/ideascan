@@ -50,22 +50,23 @@ const responsive = {
   mobile: {
     breakpoint: { max: 762, min: 0 },
     items: 1,
+    partialVisibilityGutter: 30
   },
 };
   return (
-    <div className="mb-28 ">
-      <div className="flex justify-between items-center px-3 sm:px-1 md:w-[40rem] lg:w-[60rem] xl:w-[80rem] mx-auto my-3">
-        <h1 className="font-bold text:19px sm:text-[24px] text-white w-12 sm:w-[18rem]  uppercase">
+    <div className="mb-10 ">
+      <div className="flex justify-between items-center px-3 flex-col sm:flex-row sm:px-1 w-[16rem] md:w-[40rem] lg:w-[60rem] xl:w-[80rem] mx-auto my-3">
+        <h1 className="font-bold text:[14px] sm:text-[24px] text-white w-[12rem] sm:w-[18rem]  uppercase">
           Recent Transactions
         </h1>
         <button
-          className="rounded-xl px-3 py-2 text-white bg-blue-600"
+          className="rounded-xl h-[35px] my-4 sm:my-0 sm:h-[42px] px-4 sm:px-3 sm:py-2 text-white bg-blue-600"
           onClick={toggleModal}
         >
           View All
         </button>
       </div>
-      <div className="w-[320px] mx-auto md:w-[700px] lg:w-[970px] xl:w-[1280px] md:mx-6 lg:mx-0 xl:mx-auto">
+      <div className="w-[325px] mx-auto sm:mx-auto md:w-[700px] lg:w-[970px] xl:w-[1280px] md:mx-6 lg:mx-auto xl:mx-auto">
         <Carousel
           swipeable={false}
           draggable={true}
@@ -75,6 +76,7 @@ const responsive = {
           autoPlay={true}
           autoPlaySpeed={1000}
           arrows= {false}
+          partialVisible={true}
         >
           {/* Map over your data and render multiple instances of Carddetailscarousel */}
           {statsData.map((stats) => (

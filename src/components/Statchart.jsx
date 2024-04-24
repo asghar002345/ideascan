@@ -4,6 +4,7 @@ import { UserData } from "./Data1";
 
 const Hero = () => {
   const [chartData, setChartData] = useState();
+  const [arr, setArr]=useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,8 +37,10 @@ const Hero = () => {
 
   useEffect(() => {
     if (chartData) {
-      const labels = chartData.map((item) => item.date);
-      const txCounts = chartData.map((item) => item.tx_count);
+      chartData.map((item)=> arr.push(item.date?.substring(8)));
+      let test= arr?.slice(0,10);
+      const labels = test;
+      const txCounts = chartData.map((item) => (item.tx_count/1000));
       setUserData((prevUserData) => ({
         ...prevUserData,
         labels: labels,

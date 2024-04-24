@@ -22,7 +22,7 @@ const Charts = ({ userData }) => {
           <Line
             data={userData}
             options={{ maintainAspectRatio: false }}
-            className="bg-[#2A82C4] bg-opacity-[0.18] md:pb-5 md:px-8"
+            className="bg-[#2A82C4] bg-opacity-[0.18] md:pb-5 md:px-8 mb-6"
           />
         </div>
       </div>
@@ -40,7 +40,7 @@ const Charts = ({ userData }) => {
           <Line
             data={userData}
             options={{ maintainAspectRatio: false }}
-            className="bg-[#2A82C4] bg-opacity-[0.18]  md:pb-5 md:px-8"
+            className="bg-[#2A82C4] bg-opacity-[0.18]  md:pb-5 md:px-8 mb-6"
           />
         </div>
       </div>
@@ -58,7 +58,7 @@ const Charts = ({ userData }) => {
           <Line
             data={userData}
             options={{ maintainAspectRatio: false }}
-            className="bg-[#2A82C4] bg-opacity-[0.18]  md:pb-5 md:px-8"
+            className="bg-[#2A82C4] bg-opacity-[0.18]  md:pb-5 md:px-8 mb-6"
           />
         </div>
       </div>
@@ -76,7 +76,7 @@ const Charts = ({ userData }) => {
           <Line
             data={userData}
             options={{ maintainAspectRatio: false }}
-            className="bg-[#2A82C4] bg-opacity-[0.18]  md:pb-5 md:px-8"
+            className="bg-[#2A82C4] bg-opacity-[0.18]  md:pb-5 md:px-8 mb-6"
           />
         </div>
       </div>

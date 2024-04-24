@@ -160,7 +160,7 @@ const Transactions = () => {
                   <td className="pl-7 text-left py-3 text-[#0E83DB] overflow-hidden">
                     {arr.block}
                   </td>
-                  <td className="pl-7 text-left py-3 w-[7rem] overflow-x-auto">{arr.method}</td>
+                  <td className="pl-7 text-left py-3 w-[7rem] overflow-hidden">{arr.method}</td>
                   <td className="pl-7 text-left py-3 flex items-center mt-2 text-[#0E83DB]">
                     <span data-tooltip-id={arr.from.hash}>
                       {arr.from.hash.slice(0, 14)}...{" "}

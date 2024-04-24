@@ -142,8 +142,8 @@ const Blocks = () => {
         </div>
         {/* </div> */}
       </div>
-      <div className="overflow-x-auto mx-2 sm:mx-4">
-        <table className="items-center mt-9 mx-auto lg:w-[60rem] xl:w-[80rem] rounded-lg text-left sm:w-[50rem] w-[43rem] ">
+      <div className="overflow-x-auto mx-2 sm:mx-4 ">
+        <table className="items-center mt-9 mx-auto lg:w-[60rem] xl:w-[80rem] rounded-lg text-left sm:w-[50rem] w-[43rem]">
           <thead className="bg-[#0F2434] rounded-lg text-white text-lg ">
             <tr className="text-white rounded-xl text-[14px] md:text-[16px] ">
               <th className="sm:text-left pl-7 py-4 "> Block </th>
@@ -158,7 +158,7 @@ const Blocks = () => {
             {records.map((arr) => (
               <tr
                 key={arr.id}
-                className="text-white bg-[#040F1C] border-b-[1px] border-0 border-[#0F2434] font-poppins font-[700] text-[8px] sm:text-[16px]"
+                className="text-white bg-[#040F1C] border-b-[1px] border-0 border-[#0F2434] font-poppins font-[700] text-[8px] sm:text-[16px] overflow-y-auto"
               >
                 <td className="pl-7 text-left py-3 text-[#1283D7]">{arr?.size}</td>
                 <td className="pl-7 text-left  py-3">
@@ -203,12 +203,12 @@ const Blocks = () => {
         </table>
         <div>
           <nav>
-            <ul className="text-white items-center mx-auto w-[43rem] lg:w-[60rem] xl:w-[80rem] sm:w-[50rem] flex flex-row h-7 py-7 mb-12 justify-center bg-[#040F1C] ">
+            <ul className="text-white items-center mx-auto w-[43rem] lg:w-[60rem] xl:w-[80rem] sm:w-[50rem] flex flex-row h-7 py-7 mb-12 justify-center bg-[#040F1C]">
               <li className="mr-3">
                 <a
                   href="#"
                   onClick={prePage}
-                  className="bg-[#0C71BC] rounded-full py-2 px-3 "
+                  className="bg-[#0C71BC] rounded-full py-1 px-2 sm:py-2 sm:px-3 text-[12px] sm:text-lg "
                 >
                   Prev{" "}
                 </a>
@@ -218,7 +218,7 @@ const Blocks = () => {
                   key={i}
                   className={`mr-3 ${
                     currentpage === n ? "active" : ""
-                  } hover:outline-blue-700 hover:outline hover:outline-2 hover:outline-offset-2 px-2`}
+                  } hover:outline-blue-700 hover:outline hover:outline-2 hover:outline-offset-2 px-2 text-[8px] sm:text-lg`}
                 >
                   <a href="#" onClick={(e) => changeCPage(e, n)} className="">
                     {n}
@@ -229,7 +229,7 @@ const Blocks = () => {
                 <a
                   href="#"
                   onClick={nextPage}
-                  className="bg-[#0C71BC] rounded-full py-2 px-3"
+                  className="bg-[#0C71BC] rounded-full py-1 px-2 sm:py-2 sm:px-3 text-[12px] sm:text-lg"
                 >
                   Next
                 </a>

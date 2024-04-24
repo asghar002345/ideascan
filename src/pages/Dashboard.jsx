@@ -89,13 +89,13 @@ const Home = () => {
         {/* <Carddetails mod={mod} setMod={setMod} /> */}
         <Cardresult mod={mod} setMod={setMod} />
         <div>
-        <div className="mt-3 w-[19rem] lg:w-[60rem] xl:w-[80rem] mx-auto">
+        <div className=" w-[19rem] sm:w-[44rem] lg:w-[60rem] xl:w-[80rem] mx-auto">
         <h1 className="flex">
           <img src={block} className="w-7" alt="" />
           <span className="ml-3 text-white text-[21px] sm:text-2xl font-bold">Blocks</span>
         </h1>
       </div>
-        <div className="rounded-lg overflow-x-auto mx-3">
+        <div className="rounded-xl overflow-x-auto mx-3">
         <table className="items-center mt-9 mx-auto lg:w-[60rem] xl:w-[80rem] rounded-lg text-left sm:w-[50rem] w-[43rem] ">
           <thead className="bg-[#0F2434] rounded-lg text-white text-lg ">
             <tr className="text-white rounded-xl text-[14px] md:text-[16px] ">
@@ -161,7 +161,7 @@ const Home = () => {
                 <a
                   href="#"
                   onClick={prePage}
-                  className="bg-[#0C71BC] rounded-full py-2 px-3 "
+                  className="bg-[#0C71BC] rounded-full py-1 px-2 sm:py-2 sm:px-3 text-[12px] sm:text-lg "
                 >
                   Prev{" "}
                 </a>
@@ -171,7 +171,7 @@ const Home = () => {
                   key={i}
                   className={`mr-3 ${
                     currentpage === n ? "active" : ""
-                  } hover:outline-blue-700 hover:outline hover:outline-2 hover:outline-offset-2 px-2`}
+                  } hover:outline-blue-700 hover:outline hover:outline-2 hover:outline-offset-2 px-2 text-[8px] sm:text-lg`}
                 >
                   <a href="#" onClick={(e) => changeCPage(e, n)} className="">
                     {n}
@@ -182,7 +182,7 @@ const Home = () => {
                 <a
                   href="#"
                   onClick={nextPage}
-                  className="bg-[#0C71BC] rounded-full py-2 px-3"
+                  className="bg-[#0C71BC] rounded-full py-1 px-2 sm:py-2 sm:px-3 text-[12px] sm:text-lg"
                 >
                   Next
                 </a>
