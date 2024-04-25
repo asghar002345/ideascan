@@ -27,17 +27,17 @@ const Charts = ({ chartData }) => {
                             <div className='flex flex-col mb-3 w-60 md:w-72 rounded-xl mr-10 bg-[#2A82C4] bg-opacity-[0.18] font-semibold'>
                                 <img src={img1} className='h-11 w-11 my-3 mx-auto' alt="" />
                                 <p className='text-center font-bold  text-[#9CA0A7] text-[18px]'>Total Accounts</p>
-                                <p className='text-center text-white text-xl mb-3 text-[24px]'>{data?.total_blocks} K</p>
+                                <p className='text-center text-white text-xl mb-3 text-[24px]'>{data && data?.total_blocks || 0} K</p>
                             </div>
                             <div className='flex flex-col mb-3 w-60 md:w-72 rounded-xl mr-10 bg-[#2A82C4] bg-opacity-[0.18] font-semibold'>
                                 <img src={img1} className='h-11 w-11 my-3 mx-auto' alt="" />
                                 <p className='text-center font-bold  text-[#9CA0A7] text-[18px]'>Latest Block</p>
-                                <p className='text-center text-white text-xl mb-3 text-[24px]'>{data?.total_transactions}</p>
+                                <p className='text-center text-white text-xl mb-3 text-[24px]'>{data && data?.total_transactions || 0}</p>
                             </div>
                             <div className='flex flex-col mb-3 w-60 md:w-72 rounded-xl mr-10 bg-[#2A82C4] bg-opacity-[0.18] font-semibold'>
                                 <img src={img1} className='h-11 w-11 my-3 mx-auto' alt="" />
                                 <p className='text-center font-bold  text-[#9CA0A7] text-[18px]'>TX Per block</p>
-                                <p className='text-center text-white text-xl mb-3 text-[24px]'>{data?.transactions_today}</p>
+                                <p className='text-center text-white text-xl mb-3 text-[24px]'>{data && data?.transactions_today || 0}</p>
                             </div>
 
                     

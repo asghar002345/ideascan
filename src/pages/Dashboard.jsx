@@ -10,7 +10,6 @@ import { useState } from "react";
 import mainpage from "../assests/videos/mainpage.mp4";
 import { useEffect } from "react";
 import { Tooltip as ReactTooltip } from "react-tooltip";
-import square from "../assests/pngs/square.png";
 import block from "../assests/pngs/block.png";
 import { IoCopyOutline } from "react-icons/io5";
 
@@ -79,7 +78,7 @@ const Home = () => {
           muted
           className="w-[100%] h-[100vh] object-cover"
         ></video>
-        <div className="absolute top-14 sm:top-32 w-[100%] h-[100%]">
+        <div className="absolute top-16 sm:top-32 w-[100%] h-[100%]">
           <SearchBar />
           <Cards />
         </div>
@@ -99,12 +98,12 @@ const Home = () => {
         <table className="items-center mt-9 mx-auto lg:w-[60rem] xl:w-[80rem] rounded-lg text-left sm:w-[50rem] w-[43rem] ">
           <thead className="bg-[#0F2434] rounded-lg text-white text-lg ">
             <tr className="text-white rounded-xl text-[14px] md:text-[16px] ">
-              <th className="sm:text-left pl-7 py-4 "> Block </th>
+              <th className="sm:text-left pl-7 py-4 rounded-tl-3xl"> Block </th>
               <th className="sm:text-left pl-7 py-4">Time stamp</th>
               <th className="sm:text-left pl-7 py-4">Block Hash</th>
               <th className="sm:text-left pl-7 py-4">Validator</th>
               <th className="sm:text-left pl-7 py-4">Transaction Count</th>
-              <th className="sm:text-left pl-7 py-4">Gas Used</th>
+              <th className="sm:text-left pl-7 py-4 rounded-tr-3xl">Gas Used</th>
             </tr>
           </thead>
           <tbody className="">

@@ -44,11 +44,11 @@ export const menuItem = [
   //   path: "/validators",
   //   name: "Validators",
   // },
-  {
-    id: "8",
-    path: "/nodes",
-    name: "Nodes",
-  },
+  // {
+  //   id: "8",
+  //   path: "/nodes",
+  //   name: "Nodes",
+  // },
   {
     id: "9",
     path: "/faucet",
@@ -95,7 +95,7 @@ const SideBar = () => {
         <button onClick={menuIconClick}>
           {<FaXmark className="w-6 h-6 mt-4 ml-5" />}
         </button>
-        <div className="overflow-y-scroll h-screen sticky pb-16">
+        <div className="overflow-y-auto h-screen sticky pb-16">
           {menuItem.map((item, index) => (
             <div key={index} className="flex">
               {/* <p className='my-5 cursor-pointer ml-9'>{item.name}</p> */}
@@ -110,12 +110,12 @@ const SideBar = () => {
               </Link>
             </div>
           ))}
-          <div className="mx-[1.5rem]">
+          {/* <div className="mx-[1.5rem]">
             <button className="border-transparent rounded px-3 py-2 bg-[#37373C] flex">
               <img src={meta} style={{ width: "20px" }} alt="meta" />
               <span className="ml-2">Add Idea Network</span>
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

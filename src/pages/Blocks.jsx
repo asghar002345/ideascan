@@ -88,7 +88,7 @@ const Blocks = () => {
           </div>
           <div className="text-center text-white font-semibold ">
             <p className="pt-2 text-[16px] md:text-xl">Top Validators (Last 24H)</p>
-            <p className="text-14px md:text-xl">{singleItem?.hash?.slice(0, 12)}...</p>
+            <p className="text-14px md:text-xl">{singleItem && singleItem?.hash?.slice(0, 12) || 0}...</p>
           </div>
         </div>
         <div className="rounded-xl mx-auto flex flex-col w-64 md:w-72 lg:w-72 xl:w-96 items-center justify-center bg-gradient-to-l bg-[#040F1C] py-4 md:py-6 lg:py-0 my-3 lg:px-2 xl:px-0">
@@ -97,7 +97,7 @@ const Blocks = () => {
           </div>
           <div className="text-center text-white font-semibold">
             <p className="pt-2 text-[14px] md:text-xl">Latest Block</p>
-            <p className="text-[14px] md:text-xl">{singleItem?.size}</p>
+            <p className="text-[14px] md:text-xl">{singleItem && singleItem?.size || 0}</p>
           </div>
         </div>
         <div className="rounded-xl mx-auto flex flex-row w-64 md:w-72 lg:w-72 xl:w-96 items-center justify-center bg-gradient-to-l bg-[#040F1C] py-4 md:py-6 lg:py-0 my-3 lg:px-2 xl:px-0">
@@ -142,19 +142,19 @@ const Blocks = () => {
         </div>
         {/* </div> */}
       </div>
-      <div className="overflow-x-auto mx-2 sm:mx-4 ">
+      <div className="overflow-x-auto mx-2 sm:mx-4 rounded-xl">
         <table className="items-center mt-9 mx-auto lg:w-[60rem] xl:w-[80rem] rounded-lg text-left sm:w-[50rem] w-[43rem]">
           <thead className="bg-[#0F2434] rounded-lg text-white text-lg ">
-            <tr className="text-white rounded-xl text-[14px] md:text-[16px] ">
-              <th className="sm:text-left pl-7 py-4 "> Block </th>
+            <tr className="text-white rounded-3xl text-[14px] md:text-[16px] ">
+              <th className="sm:text-left pl-7 py-4 rounded-tl-3xl"> Block </th>
               <th className="sm:text-left pl-7 py-4">Time stamp</th>
               <th className="sm:text-left pl-7 py-4">Block Hash</th>
               <th className="sm:text-left pl-7 py-4">Validator</th>
               <th className="sm:text-left pl-7 py-4">Transaction Count</th>
-              <th className="sm:text-left pl-7 py-4">Gas Used</th>
+              <th className="sm:text-left pl-7 py-4 rounded-tr-3xl">Gas Used</th>
             </tr>
           </thead>
-          <tbody className="">
+          <tbody className="overflow-y-auto h-[200px]">
             {records.map((arr) => (
               <tr
                 key={arr.id}

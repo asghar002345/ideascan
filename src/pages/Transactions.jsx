@@ -108,11 +108,11 @@ const Transactions = () => {
         <div className="justify-center  text-white flex lg:flex-col mx-8">
           <div className="px-4 text-center lg:text-left">
             <h1 className="my-3 text-[#9CA0A7] text-[12px]">Total Transactions</h1>
-            <p className="text-2xl mb-2">{((singleItem?.block)/10000000).toFixed(2)}</p>
+            <p className="text-2xl mb-2">{singleItem && ((singleItem?.block)/10000000).toFixed(2) || 0}</p>
           </div>
           <div className="px-1 text-center lg:text-left">
             <h1 className="my-3 text-[#9CA0A7] text-[12px]">Contract Transaction</h1>
-            <p className="text-2xl mb-2">{singleItem?.confirmations}</p>
+            <p className="text-2xl mb-2">{singleItem && singleItem?.confirmations || 0}</p>
           </div>
           {/* <div className="px-1 text-center lg:text-left">
             <h1 className="my-3 text-[#9CA0A7]">Gas Fee Paid</h1>
@@ -128,14 +128,14 @@ const Transactions = () => {
           <table className="items-center mx-auto mt-9 w-[80rem] rounded-lg text-left">
             <thead className="bg-[#0F2434] rounded-lg text-white font-bold font-poppins ">
               <tr className="text-white rounded-xl">
-                <th className="text-left pl-7 py-4 "> TxHash </th>
+                <th className="text-left pl-7 py-4 rounded-tl-3xl"> TxHash </th>
                 <th className="text-left pl-7 py-4">Block</th>
                 <th className="text-left pl-7 py-4">Method</th>
                 <th className="text-left pl-7 py-4">From</th>
                 <th className="text-left pl-7 py-4">To</th>
                 <th className="text-left pl-7 py-4">Timestamp</th>
                 <th className="text-left pl-7 py-4">Value</th>
-                <th className="text-left pl-7 py-4">Status</th>
+                <th className="text-left pl-7 py-4 rounded-tr-3xl">Status</th>
               </tr>
             </thead>
             <tbody className="">
@@ -157,10 +157,10 @@ const Transactions = () => {
                       content={arr.hash}
                     />
                   </td>
-                  <td className="pl-7 text-left py-3 text-[#0E83DB] overflow-hidden">
+                  <td className="pl-7 text-left py-3 text-[#0E83DB] w-[7rem] overflow-hidden">
                     {arr.block}
                   </td>
-                  <td className="pl-7 text-left py-3 w-[7rem] overflow-hidden">{arr.method}</td>
+                  <td className="pl-7 text-left py-3 ">{arr.method}</td>
                   <td className="pl-7 text-left py-3 flex items-center mt-2 text-[#0E83DB]">
                     <span data-tooltip-id={arr.from.hash}>
                       {arr.from.hash.slice(0, 14)}...{" "}
