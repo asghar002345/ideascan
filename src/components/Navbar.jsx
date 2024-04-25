@@ -50,8 +50,9 @@ const Navbar = () => {
     closeOnClick: true,
     pauseOnHover: true,
     draggable: true,
+    progressStyle: { background: '#0061f2' },
     progress: undefined,
-    theme: "dark",
+    theme: "info",
     });
   return (
     <div className="flex justify-between bg-[#181919] w-full text-white items-center h-[80px] font-poppins">
@@ -78,7 +79,7 @@ const Navbar = () => {
             </button>
           }
           {errorMessage && <div> {errorMessage} </div>}
-          <ToastContainer />
+          <ToastContainer toastStyle={{ backgroundColor: "black" }} />
         </div>
       <div  className='mr-3 md:mr-16 leading-3'> {<SideBar />}</div>
         </div>
