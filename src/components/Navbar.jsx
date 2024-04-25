@@ -26,7 +26,6 @@ const Navbar = () => {
         setShow(true);
       }
       else{
-        setErrorMessage('Install MetaMask!!!');
         setShow(false);
       }
     } catch (error) {
