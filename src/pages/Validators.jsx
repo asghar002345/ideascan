@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
 import { arraytest4 } from '../utils/Blockarray1';
-import { UserData } from '../components/Data';
 import { arraytest } from '../utils/arraytest';
 import SearchBar from '../components/SearchBar.jsx';
 

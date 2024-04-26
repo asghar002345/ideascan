@@ -1,12 +1,8 @@
-import React, { useEffect } from "react";
-import { slide as menu } from "react-burger-menu";
-import { Link, Route } from "react-router-dom";
-import { HiMenu } from "react-icons/hi";
+import React from "react";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
-import meta from "../assests/svgs/metamask-icon.svg";
-import { useRef } from "react";
 
 export const menuItem = [
   {

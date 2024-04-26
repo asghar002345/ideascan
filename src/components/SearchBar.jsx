@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import { FaXmark } from "react-icons/fa6";
 import { Navigate } from "react-router-dom";
-import Searchresult from "../pages/Searchresult";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -31,10 +29,6 @@ const SearchBar = () => {
     }
   };
 
-  // const closemenu = () => {
-  //   setMenuopen(!menuopen);
-  // };
-
   return (
     <div className="font-poppins">
       <div className="flex items-center justify-center mt-7">
@@ -45,7 +39,7 @@ const SearchBar = () => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search for any address, transaction or block"
-            className="border border-[#CDDFE5] border-opacity-[0.1] mb-2 h-[40px] sm:h-[65px] w-[18rem] sm:w-[600px] pl-11 pr-[5.5rem] sm:pr-32 md:pr-[8rem] lg:pr-32 py-3 sm:py-6 bg-[#081015]  bg-opacity-[0.8] text-white font-poppins tracking-wide z-[-8] font-bold rounded-xl stroke-black outline-none placeholder:-translate-y-1 sm:placeholder:-translate-y-0 placeholder:text-[12px] sm:placeholder:text-[15px] sm:placeholder-white   "
+            className="border border-[#CDDFE5] border-opacity-[0.1] mb-2 h-[40px] sm:h-[65px] w-[18rem] sm:w-[600px] pl-11 pr-[5.5rem] sm:pr-32 md:pr-[8rem] lg:pr-32 py-3 sm:py-6 bg-[#081015]  bg-opacity-[0.8] text-white font-poppins tracking-wide z-[-8] font-bold rounded-xl stroke-black outline-none placeholder:-translate-y-0.5 sm:placeholder:-translate-y-0 placeholder:text-[12px] sm:placeholder:text-[15px] sm:placeholder-white   "
           />
           <button
             className="text-white font-bold text-[14px] sm:text-[18px] h-[22px] sm:h-[48px] border-transparent rounded-lg my-[0.5rem] sm:py-[0.5rem] mr-3 sm:mr-5 sm:px-3 px-1 w-16 sm:w-24 cursor-pointer absolute bg-[#0086FF] right-0"

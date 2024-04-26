@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { arraytest } from "../utils/array3";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ModalComponent from "./ModalComponent";
@@ -66,9 +65,6 @@ const responsive = {
           View all
         </button>
       </div>
-      {/* <Carousel responsive={responsive}>
-          <Carddetailscarousel />
-          </Carousel> */}
       <div className="w-[320px] mx-auto md:w-[700px] md:mx-6 lg:w-[970px] lg:mx-0 xl:w-[1280px] xl:mx-auto">
         <Carousel
           swipeable={true}

@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import { arraytest1, arraytest2 } from "../utils/Blockarray1";
 import DynamicChart from "../components/DynamicChart";
-import { UserData } from "../components/Data";
-import square from "../assests/pngs/square.png";
 import SearchBar from "../components/SearchBar.jsx";
 import { useEffect } from "react";
 import { IoCopyOutline } from "react-icons/io5";
@@ -104,7 +101,7 @@ const Transactions = () => {
           Transactions
         </h1>
       </div>
-      <div className="bg-[#0F2434] flex flex-col lg:flex-row xl:flex-row rounded-xl shadow-lg w-[23rem] sm:w-full md:w-[40rem] lg:w-[60rem] xl:w-[80rem] h-[28rem] items-center mx-auto  my-5">
+      <div className="bg-[#0F2434] flex flex-col lg:flex-row xl:flex-row rounded-xl shadow-lg w-[23rem] sm:w-full md:w-[47rem] lg:w-[60rem] xl:w-[80rem] h-[28rem] items-center mx-auto  my-5">
         <div className="justify-center  text-white flex lg:flex-col mx-8">
           <div className="px-4 text-center lg:text-left">
             <h1 className="my-3 text-[#9CA0A7] text-[12px]">Total Transactions</h1>
@@ -123,14 +120,14 @@ const Transactions = () => {
           <DynamicChart chartData={userData} className="" />
         </div>
       </div>
-      <div>
-        <div className="rounded-lg overflow-x-auto mx-3">
+      <div className="rounded-3xl">
+        <div className="rounded-lg overflow-x-auto mx-2">
           <table className="items-center mx-auto mt-9 w-[80rem] rounded-lg text-left">
             <thead className="bg-[#0F2434] rounded-lg text-white font-bold font-poppins ">
               <tr className="text-white rounded-xl">
                 <th className="text-left pl-7 py-4 rounded-tl-3xl"> TxHash </th>
                 <th className="text-left pl-7 py-4">Block</th>
-                <th className="text-left pl-7 py-4">Method</th>
+                <th className='text-left pl-7 py-4'>Method</th>
                 <th className="text-left pl-7 py-4">From</th>
                 <th className="text-left pl-7 py-4">To</th>
                 <th className="text-left pl-7 py-4">Timestamp</th>
@@ -142,7 +139,7 @@ const Transactions = () => {
               {records.map((arr) => (
                 <tr
                   key={arr.id}
-                  className="text-white bg-[#040F1C] border-b-[1px] border-0 border-[#0F2434] font-poppins font-bold text-[14px] "
+                  className="text-white bg-[#071120] border-b-[1px] border-0 border-[#0F2434] font-poppins font-bold text-[14px] "
                 >
                   <td className="pl-7 text-left py-3">
                     <span data-tooltip-id={arr.hash}>
@@ -157,10 +154,11 @@ const Transactions = () => {
                       content={arr.hash}
                     />
                   </td>
-                  <td className="pl-7 text-left py-3 text-[#0E83DB] w-[7rem] overflow-hidden">
+                  <td className="pl-7 text-left py-3 text-[#0E83DB] ">
                     {arr.block}
                   </td>
-                  <td className="pl-7 text-left py-3 ">{arr.method}</td>
+                  <td className="pl-7 text-left py-3 ">Coin_Transfer</td>
+                  {/* {String(arr.method).slice(0,8)} */}
                   <td className="pl-7 text-left py-3 flex items-center mt-2 text-[#0E83DB]">
                     <span data-tooltip-id={arr.from.hash}>
                       {arr.from.hash.slice(0, 14)}...{" "}

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { arraytest } from "../utils/array4";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Cardresultcarousel from "./Cardresultcarousel";

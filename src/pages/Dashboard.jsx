@@ -1,5 +1,4 @@
 import React from "react";
-import bg1 from "../assests/pngs/bg1.jpg";
 import Cards from "../components/Cards";
 import Hero from "../components/Hero.jsx";
 import Carddetails from "../components/Carddetails.jsx";
@@ -88,15 +87,16 @@ const Home = () => {
         {/* <Carddetails mod={mod} setMod={setMod} /> */}
         <Cardresult mod={mod} setMod={setMod} />
         <div>
-        <div className=" w-[19rem] sm:w-[44rem] lg:w-[60rem] xl:w-[80rem] mx-auto">
+        <div className=" w-[19rem] sm:w-[44rem] lg:w-[60rem] xl:w-[80rem] mx-auto mb-4">
         <h1 className="flex">
           <img src={block} className="w-7" alt="" />
           <span className="ml-3 text-white text-[21px] sm:text-2xl font-bold">Blocks</span>
         </h1>
       </div>
-        <div className="rounded-xl overflow-x-auto mx-3">
-        <table className="items-center mt-9 mx-auto lg:w-[60rem] xl:w-[80rem] rounded-lg text-left sm:w-[50rem] w-[43rem] ">
-          <thead className="bg-[#0F2434] rounded-lg text-white text-lg ">
+        <div className="overflow-x-auto mx-2 sm:mx-4 rounded-3xl">
+        <div className="max-h-[400px] md:max-h-[70rem] overflow-y-auto mb-12">
+        <table className="items-center mx-auto lg:w-[60rem] xl:w-[80rem] rounded-lg text-left sm:w-[50rem] w-[43rem] ">
+          <thead className="bg-[#0F2434] rounded-lg text-white text-lg sticky top-0 z-10">
             <tr className="text-white rounded-xl text-[14px] md:text-[16px] ">
               <th className="sm:text-left pl-7 py-4 rounded-tl-3xl"> Block </th>
               <th className="sm:text-left pl-7 py-4">Time stamp</th>
@@ -110,16 +110,16 @@ const Home = () => {
             {records.map((arr) => (
               <tr
                 key={arr.id}
-                className="text-white bg-[#040F1C] border-b-[1px] border-0 border-[#0F2434] font-poppins font-[700] text-[8px] sm:text-[16px]"
+                className="text-white bg-[#071120] border-b-[1px] border-0 border-[#0F2434] font-poppins font-[700] text-[8px] sm:text-[16px]"
               >
                 <td className="pl-7 text-left py-3 text-[#1283D7]">{arr?.size}</td>
                 <td className="pl-7 text-left  py-3">
                   {arr.timestamp.slice(12, 13)}m ago
-                  <span className="block font-semibold text-[12px] text-[#9CA0A7]">
+                  <span className="block font-semibold text-[8px] sm:text-[12px] text-[#9CA0A7]">
                     {arr.timestamp.slice(0, 10)} {arr.timestamp.slice(11, 15)}
                   </span>{" "}
                 </td>
-                <td data-tooltip-id={arr.hash} className="flex items-center pl-7 text-left py-3 mt-3">
+                <td data-tooltip-id={arr.hash} className="flex items-center pl-7 text-left py-3 mt-2">
                   {arr?.hash?.slice(0, 12)}{" "}
                   <span className="inline-block pl-2">
                       <IoCopyOutline
@@ -153,9 +153,9 @@ const Home = () => {
             ))}
           </tbody>
         </table>
-        <div>
+        <div className="sticky bottom-0">
           <nav>
-            <ul className="text-white items-center mx-auto w-[43rem] lg:w-[62.5rem] xl:w-[80rem] sm:w-[50rem] flex flex-row h-7 py-7 mb-12 justify-center bg-[#071120] ">
+            <ul className="text-white items-center mx-auto w-[43rem] lg:w-[62.5rem] xl:w-[80rem] sm:w-[50rem] flex flex-row h-7 py-7 justify-center bg-[#071120] ">
               <li className="mr-3">
                 <a
                   href="#"
@@ -190,6 +190,7 @@ const Home = () => {
           </nav>
         </div>
       </div>
+        </div>
         </div>
         
         <Footer />

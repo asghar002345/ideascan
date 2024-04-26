@@ -1,5 +1,4 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 
 function Carddetailscarousel(props) {

@@ -1,9 +1,6 @@
 import React from "react";
-import { arraytest3 } from "../utils/Blockarray1";
 import { useState } from "react";
-import square from "../assests/pngs/square.png";
-import SearchBar from '../components/SearchBar.jsx';
-import SideBar from "../components/SideBar.jsx";
+import SearchBar from "../components/SearchBar.jsx";
 import { useEffect } from "react";
 const Contracts = () => {
   const [statsData, setStatsData] = useState([]);
@@ -48,84 +45,88 @@ const Contracts = () => {
   return (
     <div>
       <SearchBar />
-      <div className="lg:w-[60rem] xl:w-[80rem] mx-auto pl-7 sm:pl-0 ">
-      <h1 className="font-bold font-poppins text-[20px] sm:text-[32px] mt-3 text-white text-left">
-        Contracts
-      </h1>
+      <div className="lg:w-[60rem] xl:w-[80rem] mx-auto pl-7 sm:pl-0 mb-4">
+        <h1 className="font-bold font-poppins text-[20px] sm:text-[32px] mt-3 text-white text-left">
+          Contracts
+        </h1>
       </div>
-      <div className="rounded-lg overflow-x-auto mx-3">
-        <table className="items-center lg:mx-auto mt-7 w-[50rem] lg:w-[60rem] xl:w-[80rem] rounded-lg text-left">
-          <thead className="bg-[#0F2434] rounded-lg text-white text-lg ">
-            <tr className="text-white rounded-xl">
-              <th className="text-left pl-7 py-4 "> Name </th>
-              <th className="text-left pl-7 py-4">Type</th>
-              <th className="text-left pl-7 py-4">Contract_Adress</th>
-              <th className="text-left pl-7 py-4">TxHash</th>
-              <th className="text-left pl-7 py-4">Last Executed At</th>
-              {/* <th className="text-left pl-7 py-4">Deployed_At</th> */}
-            </tr>
-          </thead>
-          <tbody className="">
-            {records.map((arr) => (
-              <tr
-                key={arr.id}
-                className="text-white bg-[#040F1C] border-b-[1px] border-[#0F2434] border-0 "
-              >
-                <td className="pl-7 text-left py-3">{arr.name}</td>
-                <td className="pl-7 text-left py-3">IDE-20</td>
-                <td className="pl-7 text-left py-3 text-[#0E83DB]">
-                  {arr.address.slice(0,13)}...
-                  {/* <span className="inline-flex pl-2">
+      <div className="overflow-x-auto mx-2 sm:mx-4 rounded-3xl">
+        <div className="max-h-[400px] md:max-h-[70rem] overflow-y-auto mb-12">
+          <table className="items-center lg:mx-auto w-[50rem] lg:w-[60rem] xl:w-[80rem] rounded-lg text-left ">
+            <thead className="bg-[#0F2434] rounded-lg text-white text-lg sticky top-0 z-10">
+              <tr className="text-white rounded-xl">
+                <th className="text-left pl-7 py-4 rounded-tl-3xl"> Name </th>
+                <th className="text-left pl-7 py-4">Type</th>
+                <th className="text-left pl-7 py-4">Contract_Adress</th>
+                <th className="text-left pl-7 py-4">TxHash</th>
+                <th className="text-left pl-7 py-4 rounded-tr-3xl">Last Executed At</th>
+                {/* <th className="text-left pl-7 py-4">Deployed_At</th> */}
+              </tr>
+            </thead>
+            <tbody className="">
+              {records.map((arr) => (
+                <tr
+                  key={arr.id}
+                  className="text-white bg-[#071120] border-b-[1px] border-[#0F2434] border-0 text-[10px] sm:text-[16px]"
+                >
+                  <td className="pl-7 text-left py-3">{arr.name}</td>
+                  <td className="pl-7 text-left py-3">IDE-20</td>
+                  <td className="pl-7 text-left py-3 text-[#0E83DB]">
+                    {arr.address.slice(0, 13)}...
+                    {/* <span className="inline-flex pl-2">
                     <img src={square} />
                   </span> */}
-                </td>
-                <td className="pl-7 text-left py-3 text-[#0E83DB]">
-                  {}{" "}
-                  <span className="inline-flex pl-1">
-                    <img src={arr.icon_url} />
-                  </span>
-                </td>
-                <td className="pl-7 text-left py-3 ">{arr.Last_Executed_At}</td>
-                {/* <td className="pl-7 text-left py-3">{arr.Deployed_At}</td> */}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <div>
-          <nav className="">
-            <ul className="text-white mx-auto w-[50rem] lg:w-[60rem] xl:w-[80rem] items-center py-7 mb-10 flex flex-row justify-center bg-[#071120]">
-              <li className="mr-3">
-                <a
-                  href="#"
-                  onClick={prePage}
-                  className="bg-[#0C71BC] rounded-full py-2 px-3 "
-                >
-                  Prev{" "}
-                </a>
-              </li>
-              {numbers.map((n, i) => (
-                <li
-                  key={i}
-                  className={`mr-3 ${
-                    currentpage === n ? "active" : ""
-                  } hover:outline-blue-700 hover:outline hover:outline-2 hover:outline-offset-2 px-2`}
-                >
-                  <a href="#" onClick={(e) => changeCPage(n, e)}>
-                    {n}
+                  </td>
+                  <td className="pl-7 text-left py-3 text-[#0E83DB]">
+                    {}{" "}
+                    <span className="inline-flex pl-1">
+                      <img src={arr.icon_url} />
+                    </span>
+                  </td>
+                  <td className="pl-7 text-left py-3 ">
+                    {arr.Last_Executed_At}
+                  </td>
+                  {/* <td className="pl-7 text-left py-3">{arr.Deployed_At}</td> */}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="sticky bottom-0">
+            <nav className="">
+              <ul className="text-white mx-auto w-[50rem] lg:w-[60rem] xl:w-[80rem] items-center py-7 flex flex-row justify-center bg-[#071120]">
+                <li className="mr-3">
+                  <a
+                    href="#"
+                    onClick={prePage}
+                    className="bg-[#0C71BC] rounded-full py-1 px-2 sm:py-2 sm:px-3 text-[12px] sm:text-lg "
+                  >
+                    Prev{" "}
                   </a>
                 </li>
-              ))}
-              <li>
-                <a
-                  href="#"
-                  onClick={nextPage}
-                  className="bg-[#0C71BC] rounded-full py-2 px-3"
-                >
-                  Next
-                </a>
-              </li>
-            </ul>
-          </nav>
+                {numbers.map((n, i) => (
+                  <li
+                    key={i}
+                    className={`mr-3 ${
+                      currentpage === n ? "active" : ""
+                    } hover:outline-blue-700 hover:outline hover:outline-2 hover:outline-offset-2 px-2 text-[8px] sm:text-lg`}
+                  >
+                    <a href="#" onClick={(e) => changeCPage(n, e)}>
+                      {n}
+                    </a>
+                  </li>
+                ))}
+                <li>
+                  <a
+                    href="#"
+                    onClick={nextPage}
+                    className="bg-[#0C71BC] rounded-full py-1 px-2 sm:py-2 sm:px-3 text-[12px] sm:text-lg"
+                  >
+                    Next
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     </div>

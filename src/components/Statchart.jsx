@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Charts1 from "./Charts1";
-import { UserData } from "./Data1";
 
 const Hero = () => {
   const [chartData, setChartData] = useState();

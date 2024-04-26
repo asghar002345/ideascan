@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { arraytest1 } from "../utils/Blockarray1";
 import SearchBar from "../components/SearchBar.jsx";
 import { useEffect } from "react";
 import { IoCopyOutline } from "react-icons/io5";
@@ -56,25 +55,26 @@ const Assests = () => {
     <div className="  ">
       <SearchBar />
       <div className="flex flex-col pb-20">
-        <div className="sm:w-[30rem] md:min-w-[38rem] lg:w-[60rem] xl:w-[60rem] mx-auto pl-6 sm:pl-0 text-left">
+        <div className="sm:w-[30rem] md:min-w-[38rem] lg:w-[60rem] xl:w-[60rem] mx-auto pl-6 sm:pl-0 text-left mb-4">
           <h1 className="font-bold font-poppins text-2xl mt-3 text-left text-white ">
             Assests
           </h1>
         </div>
-        <div className="rounded-lg overflow-x-auto mx-3">
-          <table className="items-center mt-9 w-[60rem] justify-center rounded-lg text-left mx-auto">
-            <thead className="bg-[#0F2434] rounded-lg text-white text-lg ">
+        <div className="overflow-x-auto mx-2 sm:mx-4 rounded-3xl">
+        <div className="max-h-[400px] md:max-h-[70rem] overflow-y-auto mb-12">
+          <table className="items-center w-[60rem] justify-center rounded-lg text-left mx-auto">
+            <thead className="bg-[#0F2434] rounded-lg text-white text-[13px] sm:text-[16px] sticky top-0 z-10">
               <tr className="text-white rounded-xl">
-                <th className="text-left pl-7 py-4 "> Name </th>
+                <th className="text-left pl-7 py-4 rounded-tl-3xl"> Name </th>
                 <th className="text-left pl-12 py-4">Contact Adress</th>
-                <th className="text-left pl-7 py-4">Total Supply</th>
+                <th className="text-left pl-7 py-4 rounded-tr-3xl">Total Supply</th>
               </tr>
             </thead>
             <tbody className="">
               {records.map((arr) => (
                 <tr
                   key={arr.id}
-                  className="text-white bg-[#071120] border-b-[1px] border-0 "
+                  className="text-white bg-[#071120] border-b-[1px] border-0 text-[10px] sm:text-[16px]"
                 >
                   <td className="pl-7 text-left py-3">{arr.name}</td>
                   <td className="pl-12 text-left py-3 flex items-center text-[#0E83DB]">
@@ -101,14 +101,14 @@ const Assests = () => {
               ))}
             </tbody>
           </table>
-          <div className="">
+          <div className="sticky bottom-0">
             <nav>
               <ul className="text-white mx-auto w-[60rem] flex flex-row justify-center py-3 bg-[#071120] ">
                 <li className="mr-3">
                   <a
                     href="#"
                     onClick={prePage}
-                    className="bg-[#0C71BC] rounded-full py-2 px-3 "
+                    className="bg-[#0C71BC] rounded-full py-1 px-2 sm:py-2 sm:px-3 text-[12px] sm:text-lg "
                   >
                     Prev{" "}
                   </a>
@@ -118,7 +118,7 @@ const Assests = () => {
                     key={i}
                     className={`mr-3 ${
                       currentpage === n ? "active" : ""
-                    } hover:outline-blue-700 hover:outline hover:outline-2 hover:outline-offset-2 px-2`}
+                    } hover:outline-blue-700 hover:outline hover:outline-2 hover:outline-offset-2 px-2 text-[8px] sm:text-lg`}
                   >
                     <a href="#" onClick={(e) => changeCPage(e, n)} className="">
                       {n}
@@ -129,7 +129,7 @@ const Assests = () => {
                   <a
                     href="#"
                     onClick={nextPage}
-                    className="bg-[#0C71BC] rounded-full py-2 px-3"
+                    className="bg-[#0C71BC] rounded-full py-1 px-2 sm:py-2 sm:px-3 text-[12px] sm:text-lg"
                   >
                     Next
                   </a>
@@ -137,6 +137,7 @@ const Assests = () => {
               </ul>
             </nav>
           </div>
+        </div>
         </div>
       </div>
     </div>
