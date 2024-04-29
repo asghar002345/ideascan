@@ -24,7 +24,7 @@ const Hero = () => {
         console.log("Requested data which we get from block chain ");
         console.log(chart_data);
         chart_data.map((item)=> arr.push(item.date?.substring(8)));
-        let test= arr?.slice(0,8)
+        let test= arr?.slice(0,12)
         
 
         const labels = test;
@@ -37,6 +37,7 @@ const Hero = () => {
             {
               ...prevUserData.datasets[0],
               data: txCounts,
+              backgroundColor:['#0C71BC','#5DAFEB']
             },
           ],
         }));

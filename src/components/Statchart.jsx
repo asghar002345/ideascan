@@ -47,6 +47,10 @@ const Hero = () => {
           {
             ...prevUserData.datasets[0],
             data: txCounts,
+            backgroundColor: [
+              "green" , "blue" , "red"
+            ],
+            borderWidth:2,
           },
         ],
       }));

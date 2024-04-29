@@ -7,6 +7,7 @@ import { IoCopyOutline } from "react-icons/io5";
 import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [show, setShow]= useState(false);
@@ -55,10 +56,10 @@ const Navbar = () => {
     });
   return (
     <div className="flex justify-between bg-[#181919] w-full text-white items-center h-[80px] font-poppins">
-      <div className="ml-2 md:ml-12">
+      <Link to={'/'} className="ml-2 md:ml-12 cursor-pointer">
         <img src={logo} alt="logo" className="w-44 sm:w-52" />
         {/* <img src={logo1} alt="logo1" className="pl-3" /> */}
-      </div>
+      </Link>
         <div className="flex items-center">
         <div className="mx-[1.5rem]">
           {

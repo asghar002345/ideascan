@@ -2,6 +2,11 @@ import React from "react";
 import { useState } from "react";
 import SearchBar from "../components/SearchBar.jsx";
 import { useEffect } from "react";
+import { CiImageOff } from "react-icons/ci";
+import { GiPlagueDoctorProfile } from "react-icons/gi";
+import { GiBrokenBone } from "react-icons/gi";
+
+
 const Contracts = () => {
   const [statsData, setStatsData] = useState([]);
   const [currentpage, setCurrentpage] = useState(1);
@@ -45,21 +50,22 @@ const Contracts = () => {
   return (
     <div>
       <SearchBar />
-      <div className="lg:w-[60rem] xl:w-[80rem] mx-auto pl-7 sm:pl-0 mb-4">
+      <div className="lg:w-[60rem] xl:w-[80rem] w-[10rem] mx-auto pl-7 sm:pl-0 mb-4">
         <h1 className="font-bold font-poppins text-[20px] sm:text-[32px] mt-3 text-white text-left">
           Contracts
         </h1>
       </div>
       <div className="overflow-x-auto mx-2 sm:mx-4 rounded-3xl">
         <div className="max-h-[400px] md:max-h-[70rem] overflow-y-auto mb-12">
-          <table className="items-center lg:mx-auto w-[50rem] lg:w-[60rem] xl:w-[80rem] rounded-lg text-left ">
+          <table className="items-center mx-auto lg:mx-auto w-[50rem] lg:w-[60rem] xl:w-[80rem] rounded-lg text-left ">
             <thead className="bg-[#0F2434] rounded-lg text-white text-lg sticky top-0 z-10">
               <tr className="text-white rounded-xl">
-                <th className="text-left pl-7 py-4 rounded-tl-3xl"> Name </th>
+                <th className="text-left pl-7 py-4 rounded-tl-3xl w-[20rem]"> Name </th>
                 <th className="text-left pl-7 py-4">Type</th>
-                <th className="text-left pl-7 py-4">Contract_Adress</th>
-                <th className="text-left pl-7 py-4">TxHash</th>
-                <th className="text-left pl-7 py-4 rounded-tr-3xl">Last Executed At</th>
+                <th className="text-left pl-7 py-4">Contract Adress</th>
+                <th className="text-left pl-7 py-4 rounded-tr-3xl">Exchange Rate</th>
+                {/* <th className="text-left pl-7 py-4 rounded-tr-3xl">Symbol</th> */}
+                {/* <th className="text-left pl-7 py-4 rounded-tr-3xl">Last Executed At</th> */}
                 {/* <th className="text-left pl-7 py-4">Deployed_At</th> */}
               </tr>
             </thead>
@@ -69,7 +75,11 @@ const Contracts = () => {
                   key={arr.id}
                   className="text-white bg-[#071120] border-b-[1px] border-[#0F2434] border-0 text-[10px] sm:text-[16px]"
                 >
-                  <td className="pl-7 text-left py-3">{arr.name}</td>
+                  <td className="pl-7 text-left py-3 flex items-center w-[20rem]">{arr.icon_url && <img className="w-12" src={arr.icon_url}/> || <GiBrokenBone size={34} color="white" />}
+                  <span className="pl-6">
+                  {arr.name}
+                    </span>
+                  </td>
                   <td className="pl-7 text-left py-3">IDE-20</td>
                   <td className="pl-7 text-left py-3 text-[#0E83DB]">
                     {arr.address.slice(0, 13)}...
@@ -78,14 +88,17 @@ const Contracts = () => {
                   </span> */}
                   </td>
                   <td className="pl-7 text-left py-3 text-[#0E83DB]">
+                    {arr.exchange_rate && (arr.exchange_rate) || 0}
+                  </td>
+                  {/* <td className="pl-7 text-left py-3 text-[#0E83DB]">
                     {}{" "}
                     <span className="inline-flex pl-1">
-                      <img src={arr.icon_url} />
+                      {arr.icon_url && <img className="w-12" src={arr.icon_url}/> || <CiImageOff size={34} color="white" />}
                     </span>
-                  </td>
-                  <td className="pl-7 text-left py-3 ">
+                  </td> */}
+                  {/* <td className="pl-7 text-left py-3 ">
                     {arr.Last_Executed_At}
-                  </td>
+                  </td> */}
                   {/* <td className="pl-7 text-left py-3">{arr.Deployed_At}</td> */}
                 </tr>
               ))}

@@ -96,7 +96,7 @@ const Home = () => {
         <div className="overflow-x-auto mx-2 sm:mx-4 rounded-3xl">
         <div className="max-h-[400px] md:max-h-[70rem] overflow-y-auto mb-12">
         <table className="items-center mx-auto lg:w-[60rem] xl:w-[80rem] rounded-lg text-left sm:w-[50rem] w-[43rem] ">
-          <thead className="bg-[#0F2434] rounded-lg text-white text-lg sticky top-0 z-10">
+          <thead className="bg-[#0F2434] rounded-lg text-white text-lg sticky top-0">
             <tr className="text-white rounded-xl text-[14px] md:text-[16px] ">
               <th className="sm:text-left pl-7 py-4 rounded-tl-3xl"> Block </th>
               <th className="sm:text-left pl-7 py-4">Time stamp</th>

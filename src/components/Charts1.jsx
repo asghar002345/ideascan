@@ -1,5 +1,5 @@
 import React from "react";
-import { Line } from "react-chartjs-2";
+import { Bar, Doughnut, Line,Pie } from "react-chartjs-2";
 import Footer from "./Footer";
 
 const Charts = ({ userData }) => {
@@ -17,7 +17,7 @@ const Charts = ({ userData }) => {
           <div className="bg-[#252527]">
             <p className="text-white py-4 pl-3">Token Price 0.00838 ⓘ</p>
           </div>
-          <Line
+          <Doughnut
             data={userData}
             options={{ maintainAspectRatio: false }}
             className="bg-[#2A82C4] bg-opacity-[0.18] md:pb-5 md:px-8 mb-6  p-2 sm:p-4"
