@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Line,Bar } from 'react-chartjs-2'
+import { Bar } from 'react-chartjs-2'
 import { useEffect } from 'react'
 import img2 from '../assests/pngs/icon1.png'
 import img1 from '../assests/pngs/img1.png'

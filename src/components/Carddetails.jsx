@@ -3,7 +3,6 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ModalComponent from "./ModalComponent";
 import Carddetailscarousel from "./Carddetailscarousel";
-// import "./CustomCarousel.css";
 
 const Carddetails = ({ mod, setMod }) => {
   

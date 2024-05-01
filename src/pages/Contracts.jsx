@@ -2,8 +2,6 @@ import React from "react";
 import { useState } from "react";
 import SearchBar from "../components/SearchBar.jsx";
 import { useEffect } from "react";
-import { CiImageOff } from "react-icons/ci";
-import { GiPlagueDoctorProfile } from "react-icons/gi";
 import { GiBrokenBone } from "react-icons/gi";
 
 
@@ -62,9 +60,6 @@ const Contracts = () => {
                 <th className="text-left pl-7 py-4">Type</th>
                 <th className="text-left pl-7 py-4">Contract Adress</th>
                 <th className="text-left pl-7 py-4 rounded-tr-3xl">Exchange Rate</th>
-                {/* <th className="text-left pl-7 py-4 rounded-tr-3xl">Symbol</th> */}
-                {/* <th className="text-left pl-7 py-4 rounded-tr-3xl">Last Executed At</th> */}
-                {/* <th className="text-left pl-7 py-4">Deployed_At</th> */}
               </tr>
             </thead>
             <tbody className="">
@@ -88,16 +83,6 @@ const Contracts = () => {
                   <td className="pl-7 text-left py-3 text-[#0E83DB]">
                     {arr.exchange_rate && (arr.exchange_rate) || 0}
                   </td>
-                  {/* <td className="pl-7 text-left py-3 text-[#0E83DB]">
-                    {}{" "}
-                    <span className="inline-flex pl-1">
-                      {arr.icon_url && <img className="w-12" src={arr.icon_url}/> || <CiImageOff size={34} color="white" />}
-                    </span>
-                  </td> */}
-                  {/* <td className="pl-7 text-left py-3 ">
-                    {arr.Last_Executed_At}
-                  </td> */}
-                  {/* <td className="pl-7 text-left py-3">{arr.Deployed_At}</td> */}
                 </tr>
               ))}
             </tbody>

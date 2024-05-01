@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { Navigate } from "react-router-dom";
 
@@ -54,31 +54,6 @@ const SearchBar = () => {
       </div>
       {/* Render Modal if modalOpen is true */}
       {menuopen && searchResults.length > 0 && <Navigate to="/searchresult" />}
-      {/* Display search results */}
-      {/* {menuopen && searchResults.length > 0 && (
-        <div className="mt-4 w-[18rem] mx-4 xl:w-[90rem] xl:ml-6 h-[40rem] absolute">
-          <div className=" border-gray-200">
-            <ul className={`bg-black bg-opacity-60 shadow-md rounded-lg p-4`}>
-              <div className="flex justify-between">
-                <h2 className="text-lg font-semibold mb-2 text-white">
-                  Search Results:
-                </h2>
-                <button onClick={closemenu} className="text-white">
-                  <FaXmark />
-                </button>
-              </div>
-              {searchResults.slice(0, 9).map((result, index) => (
-                <li
-                  key={index}
-                  className="border-b py-2 flex justify-between items-center overflow-x-auto md:overflow-x-hidden"
-                >
-                  <span className="text-white">{result.address}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      )} */}
     </div>
   );
 };

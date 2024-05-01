@@ -8,8 +8,6 @@ import { Tooltip as ReactTooltip } from "react-tooltip";
 const Assests = () => {
   const [statsData, setStatsData] = useState([]);
 
-  // https://eth.blockscout.com/api/v2/tokens?q=USDT&type=ERC-20%2CERC-721%2CERC-1155
-
   const test = async () => {
     const res = await fetch(`${process.env.REACT_APP_GNOSIS_TOKENS}`);
     const response = await res.json();

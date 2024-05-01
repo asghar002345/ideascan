@@ -1,5 +1,5 @@
 import React from "react";
-import { Bar, Doughnut, Line, Pie } from "react-chartjs-2";
+import { Doughnut} from "react-chartjs-2";
 import Footer from "./Footer";
 import { FaRegCircle } from "react-icons/fa";
 

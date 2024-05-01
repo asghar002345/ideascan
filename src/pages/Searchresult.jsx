@@ -8,13 +8,9 @@ const Searchresult = () => {
   const data = async () => {
     try {
       const response = await fetch(`${apiUrl}?q=${query}`);
-      //   if (!response.ok) {
-      //     throw new Error("Network response was not ok");
-      //   }
       const data = await response.json();
       setSearchResults(data.items);
       setQuery(""); // Assuming data is always an array
-      //   setMenuopen(true);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -46,7 +42,6 @@ const Searchresult = () => {
         </div>
       </div>
 
-      {/* {searchResults.length > 0 && ( */}
       <div className="mt-4  mx-auto  xl:w-[85rem]">
         <div className=" border-gray-200">
           <ul className={` shadow-md rounded-lg p-4`}>
@@ -66,7 +61,6 @@ const Searchresult = () => {
           </ul>
         </div>
       </div>
-      {/* )} */}
     </div>
   );
 };

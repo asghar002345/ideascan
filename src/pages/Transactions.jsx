@@ -13,8 +13,7 @@ const Transactions = () => {
       {
         label: "Users Gained",
         data: [],
-        borderWidth: 2,
-        // color:"white"
+        borderWidth: 2
       },
     ],
   });
@@ -48,8 +47,7 @@ const Transactions = () => {
           {
             label: "Users Gained",
             data: data,
-            borderWidth: 2,
-            // color:"white"
+            borderWidth: 2
           },
         ],
       });

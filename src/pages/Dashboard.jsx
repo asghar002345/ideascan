@@ -1,7 +1,7 @@
 import React from "react";
 import Cards from "../components/Cards";
 import Hero from "../components/Hero.jsx";
-import Carddetails from "../components/Carddetails.jsx";
+// import Carddetails from "../components/Carddetails.jsx";
 import Cardresult from "../components/Cardresult.jsx";
 import Footer from "../components/Footer.jsx";
 import SearchBar from "../components/SearchBar.jsx";
@@ -58,10 +58,6 @@ const Home = () => {
 
   return (
     <div>
-      {/* <div className='bg-center bg-cover' style={{backgroundImage: url(${bg1})}}>
-        <SearchBar />
-        <Cards />
-      </div> */}
       <div>
         <video
           src={mainpage}
