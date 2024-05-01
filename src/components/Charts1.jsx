@@ -4,7 +4,6 @@ import Footer from "./Footer";
 import { FaRegCircle } from "react-icons/fa";
 
 const Charts = ({ userData }) => {
-  console.log("this is userdata in new  page", userData);
   return (
     <div className="font-poppins">
       <div className="mt-10 mb-20">

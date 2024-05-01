@@ -12,8 +12,6 @@ const Hero = () => {
           `${process.env.REACT_APP_GNOSIS_STATS_GRAPHS}`
         );
         const req = await res.json();
-        // console.log("Requested data which we get from block chain ");
-        // console.log(req.chart_data);
         setChartData(req.chart_data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -56,8 +54,6 @@ const Hero = () => {
       }));
     }
   }, [chartData]);
-
-  console.log(chartData);
 
   return (
     <div className="">

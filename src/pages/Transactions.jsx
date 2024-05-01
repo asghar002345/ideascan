@@ -27,11 +27,8 @@ const Transactions = () => {
         `${process.env.REACT_APP_GNOSIS_TRANSACTIONS}`
       );
       const response = await res.json();
-      // console.log("Requested data which we get from block chain ");
-      // console.log(response);
       setStatsData(response);
       setSingleItem(await statsData[0]);
-      // console.log("this is single item============>>", singleItem);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -66,7 +63,6 @@ const Transactions = () => {
   const records = statsData.slice(indexoffirstrecord, indexoflastrecord);
   const nPages = Math.ceil(statsData.length / recordsperpage);
   const numbers = [...Array(nPages + 1).keys()].slice(1);
-  // console.log("this is records", records);
 
   function prePage(e) {
     e.preventDefault();
@@ -120,7 +116,7 @@ const Transactions = () => {
           <DynamicChart chartData={userData} className="" />
         </div>
       </div>
-      <div className="rounded-3xl">
+      <div className="rounded-3xl mb-20">
         <div className="rounded-lg overflow-x-auto mx-2">
           <table className="items-center mx-auto mt-9 w-[80rem] rounded-lg text-left">
             <thead className="bg-[#0F2434] rounded-lg text-white font-bold font-poppins ">
@@ -138,7 +134,7 @@ const Transactions = () => {
             <tbody className="">
               {records.map((arr) => (
                 <tr
-                  key={arr.id}
+                  key={arr.hash}
                   className="text-white bg-[#071120] border-b-[1px] border-0 border-[#0F2434] font-poppins font-bold text-[14px] "
                 >
                   <td className="pl-7 text-left py-3">
@@ -215,42 +211,6 @@ const Transactions = () => {
               ))}
             </tbody>
           </table>
-          <div>
-            <nav>
-              <ul className="text-white mx-auto w-[80rem] flex flex-row py-7 mb-12  justify-center  bg-[#071120]">
-                <li className="mr-3">
-                  <a
-                    href="#"
-                    onClick={prePage}
-                    className="bg-[#0C71BC] rounded-full py-2 px-3 "
-                  >
-                    Prev{" "}
-                  </a>
-                </li>
-                {numbers.map((n, i) => (
-                  <li
-                    key={i}
-                    className={`mr-3 ${
-                      currentpage === n ? "active" : ""
-                    } hover:outline-blue-700 hover:outline hover:outline-2 hover:outline-offset-2 px-2`}
-                  >
-                    <a href="#" onClick={(e) => changeCPage(n, e)}>
-                      {n}
-                    </a>
-                  </li>
-                ))}
-                <li>
-                  <a
-                    href="#"
-                    onClick={nextPage}
-                    className="bg-[#0C71BC] rounded-full py-2 px-3"
-                  >
-                    Next
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
         </div>
       </div>
     </div>

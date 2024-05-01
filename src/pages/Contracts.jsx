@@ -60,7 +60,7 @@ const Contracts = () => {
           <table className="items-center mx-auto lg:mx-auto w-[50rem] lg:w-[60rem] xl:w-[80rem] rounded-lg text-left ">
             <thead className="bg-[#0F2434] rounded-lg text-white text-lg sticky top-0 z-10">
               <tr className="text-white rounded-xl">
-                <th className="text-left pl-7 py-4 rounded-tl-3xl w-[20rem]"> Name </th>
+                <th className="text-center pr-4 py-4 rounded-tl-3xl w-[20rem]"> Name </th>
                 <th className="text-left pl-7 py-4">Type</th>
                 <th className="text-left pl-7 py-4">Contract Adress</th>
                 <th className="text-left pl-7 py-4 rounded-tr-3xl">Exchange Rate</th>
