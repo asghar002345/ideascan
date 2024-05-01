@@ -10,10 +10,10 @@ const Charts = ({ chartData }) => {
     const [data , setData] = useState([])
     useEffect(() => {
         const test = async () => {
-          const res = await fetch("https://eth.blockscout.com/api/v2/stats");
+          const res = await fetch(`${process.env.REACT_APP_GNOSIS_CARDS_STATS}`);
           const des = await res.json();
           setData(des);
-          console.log(des);
+        //   console.log(des);
         };
         test();
       }, []);

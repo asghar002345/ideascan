@@ -12,12 +12,12 @@ const Cardresult = ({ mod, setMod }) => {
 
   const test = async () => {
     const res = await fetch(
-      `https://eth.blockscout.com/api/v2/main-page/transactions`
+      `${process.env.REACT_APP_GNOSIS_TRANSACTIONS}`
     );
     const response = await res.json();
     setStatsData(response);
-    console.log("recent transactions");
-    console.log("This is Testing", statsData);
+    // console.log("recent transactions");
+    // console.log("This is Testing", statsData);
   };
 
   useEffect(() => {
@@ -79,7 +79,7 @@ const responsive = {
         >
           {/* Map over your data and render multiple instances of Carddetailscarousel */}
           {statsData.map((stats) => (
-            <Cardresultcarousel stats={stats} />
+            <Cardresultcarousel stats={stats} key={stats.hash}/>
           ))}
         </Carousel>
       </div>

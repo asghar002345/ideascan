@@ -18,11 +18,11 @@ const Hero = () => {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          `https://gnosis.blockscout.com/api/v2/stats/charts/transactions`
+          `${process.env.REACT_APP_GNOSIS_STATS_GRAPHS}`
         );
         const { chart_data } = await res.json();
-        console.log("Requested data which we get from block chain ");
-        console.log(chart_data);
+        // console.log("Requested data which we get from block chain ");
+        // console.log(chart_data);
         chart_data.map((item)=> arr.push(item.date?.substring(8)));
         let test= arr?.slice(0,12)
         

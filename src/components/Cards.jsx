@@ -10,10 +10,10 @@ const Cards = () => {
 
   useEffect(() => {
     const test = async () => {
-      const res = await fetch("https://eth.blockscout.com/api/v2/stats");
+      const res = await fetch(`${process.env.REACT_APP_GNOSIS_CARDS_STATS}`);
       const des = await res.json();
       setStatsData(des);
-      console.log(des);
+      // console.log(des);
     };
     test();
   }, []);
@@ -26,7 +26,7 @@ const Cards = () => {
             <img src={img1} alt="" className="" />
           </div>
           <div className="flex flex-col items-center mb-3">
-            <span className="text-[14px] sm:text-[18px] font-semibold text-white sm:font-bold font-poppins">
+            <span className="text-[14px] sm:text-[18px] font-semibold text-[#9CA0A7] font-poppins">
               Avg. Block Time
             </span>
             <span className="text-[18px] sm:text-[24px] font-poppins font-semibold">
@@ -39,7 +39,7 @@ const Cards = () => {
             <img src={img2} alt="" className="" />
           </div>
           <div className="flex flex-col items-center mb-3">
-            <span className="text-[14px] sm:text-[18px] font-semibold text-white sm:font-bold font-poppins">
+            <span className="text-[14px] sm:text-[18px] font-semibold text-[#9CA0A7] font-poppins">
             Market Cap
             </span>
             <span className="text-[18px] sm:text-[24px] font-poppins font-semibold">
@@ -52,7 +52,7 @@ const Cards = () => {
             <img src={img3} alt="" className="" />
           </div>
           <div className="flex flex-col items-center mb-3">
-            <span className="text-[14px] sm:text-[18px] font-semibold text-white sm:font-bold font-poppins">
+            <span className="text-[14px] sm:text-[18px] font-semibold text-[#9CA0A7] font-poppins">
             Avg. Apr ⓘ
             </span>
             <span className="text-[18px] sm:text-[24px] font-poppins font-semibold">
@@ -65,7 +65,7 @@ const Cards = () => {
             <img src={img4} alt="" className="" />
           </div>
           <div className="flex flex-col items-center mb-3">
-            <span className="text-[14px] sm:text-[18px] font-semibold text-white sm:font-bold font-poppins">
+            <span className="text-[14px] sm:text-[18px] font-semibold text-[#9CA0A7] font-poppins">
             Circulation Supply ⓘ
             </span>
             <span className="text-[18px] sm:text-[24px] font-poppins font-semibold">

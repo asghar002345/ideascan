@@ -40,12 +40,13 @@ const Cardresultcarousel = (props) => {
               </p>
               <p className="text-white flex">
                 <span className="pr-[2.8rem] text-[#C6C8CC]">From</span>{" "}
-                <div
+                <span
+                className="block"
                   data-tooltip-id={stats?.from?.hash}
                   onClick={() => copyText1(stats)}
                 >
                   {stats?.from?.hash?.slice(0, 12)}...
-                </div>
+                </span>
                 <ReactTooltip
                   id={stats?.from?.hash}
                   place="top"
@@ -57,12 +58,13 @@ const Cardresultcarousel = (props) => {
               </p>
               <p className="text-white flex">
                 <span className="pr-[4.2rem] text-[#C6C8CC]">To</span>{" "}
-                <div
+                <span
+                className="block"
                   data-tooltip-id={stats?.to?.hash}
                   onClick={() => copyText2(stats)}
                 >
                   {stats?.to?.hash?.slice(0, 12)}...
-                </div>
+                </span>
                 <ReactTooltip
                   id={stats?.to?.hash}
                   place="top"
@@ -74,12 +76,13 @@ const Cardresultcarousel = (props) => {
               </p>
               <p className="text-white flex">
                 <span className="pr-[3rem] text-[#C6C8CC]">Hash </span>{" "}
-                <div
+                <span
+                className="block"
                   data-tooltip-id={stats?.hash}
                   onClick={() => copyText3(stats)}
                 >
                   {stats?.hash?.slice(0, 12)}...
-                </div>
+                </span>
                 <ReactTooltip
                   id={stats?.hash}
                   place="top"

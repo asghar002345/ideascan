@@ -24,14 +24,14 @@ const Transactions = () => {
   const fetchData = async () => {
     try {
       const res = await fetch(
-        `https://eth.blockscout.com/api/v2/main-page/transactions`
+        `${process.env.REACT_APP_GNOSIS_TRANSACTIONS}`
       );
       const response = await res.json();
-      console.log("Requested data which we get from block chain ");
-      console.log(response);
+      // console.log("Requested data which we get from block chain ");
+      // console.log(response);
       setStatsData(response);
       setSingleItem(await statsData[0]);
-      console.log("this is single item============>>", singleItem);
+      // console.log("this is single item============>>", singleItem);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -66,7 +66,7 @@ const Transactions = () => {
   const records = statsData.slice(indexoffirstrecord, indexoflastrecord);
   const nPages = Math.ceil(statsData.length / recordsperpage);
   const numbers = [...Array(nPages + 1).keys()].slice(1);
-  console.log("this is records", records);
+  // console.log("this is records", records);
 
   function prePage(e) {
     e.preventDefault();

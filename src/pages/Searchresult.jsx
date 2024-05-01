@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 
 const Searchresult = () => {
   const [query, setQuery] = useState("usdt");
-  const apiUrl = "https://gnosis.blockscout.com/api/v2/search";
+  const apiUrl = `${process.env.REACT_APP_GNOSIS_SEARCH}`;
   const [searchResults, setSearchResults] = useState();
   const data = async () => {
     try {

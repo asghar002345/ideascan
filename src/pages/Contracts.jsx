@@ -16,14 +16,14 @@ const Contracts = () => {
   const records = statsData.slice(indexoffirstrecord, indexoflastrecord);
   const nPages = Math.ceil(statsData.length / recordsperpage);
   const numbers = [...Array(nPages + 1).keys()].slice(1);
-  console.log(records);
+  // console.log(records);
   const test = async () => {
     const res = await fetch(
-      `https://eth.blockscout.com/api/v2/tokens?q=USDT&type=ERC-20%2CERC-721%2CERC-1155`
+      `${process.env.REACT_APP_GNOSIS_TOKENS}`
     );
     const response = await res.json();
     setStatsData(response.items);
-    console.log("this is contracts", statsData);
+    // console.log("this is contracts", statsData);
   };
 
   useEffect(() => {
@@ -72,7 +72,7 @@ const Contracts = () => {
             <tbody className="">
               {records.map((arr) => (
                 <tr
-                  key={arr.id}
+                  key={arr.address}
                   className="text-white bg-[#071120] border-b-[1px] border-[#0F2434] border-0 text-[10px] sm:text-[16px]"
                 >
                   <td className="pl-7 text-left py-3 flex items-center w-[20rem]">{arr.icon_url && <img className="w-12" src={arr.icon_url}/> || <GiBrokenBone size={34} color="white" />}

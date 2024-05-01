@@ -16,23 +16,17 @@ import { IoCopyOutline } from "react-icons/io5";
 const Home = () => {
   const [currentpage, setCurrentpage] = useState(1);
   const [statsData, setStatsData] = useState([]);
-  const [error, setError] = useState(null);
-  const [singleItem, setSingleItem] = useState();
 
   const test = async () => {
     const res = await fetch(
-      `https://eth.blockscout.com/api/v2/blocks?type=block%20%7C%20uncle%20%7C%20reorg`
-    );
+      `${process.env.REACT_APP_GNOSIS_BLOCK}`);
     const response = await res.json();
     setStatsData(response.items);
-    console.log("this is statsdata", statsData);
-    setSingleItem(statsData[0]);
-    console.log("this is single item", singleItem);
   };
 
   useEffect(() => {
     test();
-  }, [statsData]);
+  }, []);
   const [mod, setMod] = useState(false);
   const recordsperpage = 11;
   const indexoflastrecord = currentpage * recordsperpage;
@@ -109,8 +103,8 @@ const Home = () => {
           <tbody className="">
             {records.map((arr) => (
               <tr
-                key={arr.id}
-                className="text-white bg-[#071120] border-b-[1px] border-0 border-[#0F2434] font-poppins font-[700] text-[8px] sm:text-[16px]"
+                key={arr.hash}
+                className="text-white bg-[#071120] border-b-[1px] border-0 border-[#0F2434] font-poppins font-semibold text-[8px] sm:text-[16px]"
               >
                 <td className="pl-7 text-left py-3 text-[#1283D7]">{arr?.size}</td>
                 <td className="pl-7 text-left  py-3">

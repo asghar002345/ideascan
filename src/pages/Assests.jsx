@@ -11,10 +11,10 @@ const Assests = () => {
   // https://eth.blockscout.com/api/v2/tokens?q=USDT&type=ERC-20%2CERC-721%2CERC-1155
 
   const test = async () => {
-    const res = await fetch(`https://eth.blockscout.com/api/v2/tokens`);
+    const res = await fetch(`${process.env.REACT_APP_GNOSIS_TOKENS}`);
     const response = await res.json();
     setStatsData(response.items);
-    console.log("this is assests", statsData);
+    // console.log("this is assests", statsData);
   };
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const Assests = () => {
   const records = statsData.slice(indexoffirstrecord, indexoflastrecord);
   const nPages = Math.ceil(statsData.length / recordsperpage);
   const numbers = [...Array(nPages + 1).keys()].slice(1);
-  console.log(records);
+  // console.log(records);
 
   function prePage(e) {
     e.preventDefault();
@@ -73,7 +73,7 @@ const Assests = () => {
             <tbody className="">
               {records.map((arr) => (
                 <tr
-                  key={arr.id}
+                  key={arr.address}
                   className="text-white bg-[#071120] border-b-[1px] border-0 text-[10px] sm:text-[16px]"
                 >
                   <td className="pl-7 text-left py-3">{arr.name}</td>
