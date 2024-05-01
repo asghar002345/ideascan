@@ -12,8 +12,6 @@ const Searchresult = () => {
       //     throw new Error("Network response was not ok");
       //   }
       const data = await response.json();
-      console.log("test", data);
-      console.log(data.items);
       setSearchResults(data.items);
       setQuery(""); // Assuming data is always an array
       //   setMenuopen(true);

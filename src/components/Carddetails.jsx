@@ -15,8 +15,6 @@ const Carddetails = ({ mod, setMod }) => {
     );
     const response = await res.json();
     setStatsData(response.items);
-    // console.log("blocks");
-    // console.log("this is data", statsData);
   };
 
   useEffect(() => {

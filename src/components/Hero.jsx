@@ -21,8 +21,6 @@ const Hero = () => {
           `${process.env.REACT_APP_GNOSIS_STATS_GRAPHS}`
         );
         const { chart_data } = await res.json();
-        // console.log("Requested data which we get from block chain ");
-        // console.log(chart_data);
         chart_data.map((item)=> arr.push(item.date?.substring(8)));
         let test= arr?.slice(0,12)
         

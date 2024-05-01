@@ -16,8 +16,6 @@ const Cardresult = ({ mod, setMod }) => {
     );
     const response = await res.json();
     setStatsData(response);
-    // console.log("recent transactions");
-    // console.log("This is Testing", statsData);
   };
 
   useEffect(() => {

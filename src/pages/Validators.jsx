@@ -13,7 +13,6 @@ const Validators = () => {
   const records = arraytest4.slice(indexoffirstrecord, indexoflastrecord);
   const nPages = Math.ceil(arraytest4.length / recordsperpage);
   const numbers = [...Array(nPages + 1).keys()].slice(1)
-  console.log(records)
 
   // const test = async () => {
   //   const res = await fetch(

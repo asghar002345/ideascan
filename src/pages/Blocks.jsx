@@ -31,7 +31,6 @@ const Blocks = () => {
   const records = statsData.slice(indexoffirstrecord, indexoflastrecord);
   const nPages = Math.ceil(statsData?.length / recordsperpage);
   const numbers = [...Array(nPages + 1).keys()].slice(1);
-  // console.log(records);
 
   function prePage(e) {
     e.preventDefault();

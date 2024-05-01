@@ -13,7 +13,6 @@ const Charts = ({ chartData }) => {
           const res = await fetch(`${process.env.REACT_APP_GNOSIS_CARDS_STATS}`);
           const des = await res.json();
           setData(des);
-        //   console.log(des);
         };
         test();
       }, []);

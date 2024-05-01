@@ -14,7 +14,6 @@ const Assests = () => {
     const res = await fetch(`${process.env.REACT_APP_GNOSIS_TOKENS}`);
     const response = await res.json();
     setStatsData(response.items);
-    // console.log("this is assests", statsData);
   };
 
   useEffect(() => {
@@ -33,7 +32,6 @@ const Assests = () => {
   const records = statsData.slice(indexoffirstrecord, indexoflastrecord);
   const nPages = Math.ceil(statsData.length / recordsperpage);
   const numbers = [...Array(nPages + 1).keys()].slice(1);
-  // console.log(records);
 
   function prePage(e) {
     e.preventDefault();
